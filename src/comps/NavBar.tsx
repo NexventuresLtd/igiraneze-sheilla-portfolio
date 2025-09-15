@@ -41,7 +41,7 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
                                         key={item.id}
                                         onClick={() => {
                                             item.id == "resume" ?
-                                                window.location.href = "https://docs.google.com/document/d/1QuGES7yA19ecOBzY-9ZmQ4PMpzEHXgVBTQ1TGerS-w8/edit?usp=drivesdk"
+                                                window.location.href = "https://docs.google.com/document/d/16DcQPH2rIc6tPLzJlOQpmrpoyf8Ph1Dkt-LF7yShIRc/edit?tab=t.0"
                                                 :
                                                 setActiveSection(item.id)
                                         }}

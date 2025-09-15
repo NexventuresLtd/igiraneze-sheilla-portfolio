@@ -21,12 +21,12 @@ interface NavProps {
 }
 export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, isMenuOpen, activeSection, setIsDarkMode }: NavProps) => {
     return (
-        <nav className={`${isDarkMode ? 'bg-gray-900 border-gray-700' : 'bg-white border-orange-100'} border-b  sticky top-0 z-50`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className={`${isDarkMode ? 'bg-gray-900 border-gray-700' : 'bg-gray-100 border-orange-100'}  sticky top-0 z-50`}>
+            <div className="max-w-full md:max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <div className="flex-shrink-0">
                         <h1 className={`text-2xl font-delius font-bold ${isDarkMode ? 'text-orange-400' : 'text-orange-600'}`}>
-                           Igiraneza Sheilla
+                            Igiraneza Sheilla
                         </h1>
                     </div>
 
@@ -38,7 +38,12 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
                                 return (
                                     <button
                                         key={item.id}
-                                        onClick={() => setActiveSection(item.id)}
+                                        onClick={() => {
+                                            item.id == "resume" ?
+                                                window.location.href = "https://docs.google.com/document/d/16DcQPH2rIc6tPLzJlOQpmrpoyf8Ph1Dkt-LF7yShIRc/edit?tab=t.0"
+                                                :
+                                                setActiveSection(item.id)
+                                        }}
                                         className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${activeSection === item.id
                                             ? `${isDarkMode ? 'bg-orange-900 text-orange-200' : 'bg-orange-100 text-orange-800'}`
                                             : `${isDarkMode ? 'text-gray-300 hover:bg-gray-700 hover:text-orange-300' : 'text-gray-700 hover:bg-gray-50 hover:text-orange-600'}`

@@ -1,4 +1,5 @@
-import { Book, ArrowRight, Sparkles, Target, Users, Heart, Linkedin } from "lucide-react";
+import {  ArrowRight, Target, Users, Heart, Linkedin } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
 
 interface renderProps {
     isDarkMode: boolean;
@@ -6,27 +7,101 @@ interface renderProps {
 }
 
 export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
+    // Animation variants
+    const containerVariants:Variants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.3
+            }
+        }
+    };
+
+    const itemVariants:Variants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.5,
+                ease: "easeOut"
+            }
+        }
+    };
+
+    const floatVariants:Variants = {
+        float: {
+            y: [-10, 10, -10],
+            transition: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+            }
+        }
+    };
+
+    const pulseVariants:Variants = {
+        pulse: {
+            scale: [1, 1.05, 1],
+            opacity: [0.7, 1, 0.7],
+            transition: {
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+            }
+        }
+    };
+
     return (
-        <div className={`min-h-screen relative overflow-hidden ${isDarkMode ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900' : 'bg-gradient-to-br from-orange-50 via-white to-white'}`}>
-            {/* Background decorative elements */}
+        <div className={`min-h-screen relative overflow-hidden ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
             {/* Animated floating elements */}
-            <div className="absolute top-20 left-10 animate-float">
-                <div className={`w-4 h-4 rounded-full ${isDarkMode ? 'bg-orange-400/60' : 'bg-orange-500/50'}`}></div>
-            </div>
-            <div className="absolute top-1/3 right-20 animate-float" style={{ animationDelay: '1s' }}>
-                <div className={`w-6 h-6 rounded-full ${isDarkMode ? 'bg-amber-400/40' : 'bg-amber-400/30'}`}></div>
-            </div>
-            <div className="absolute bottom-40 left-1/4 animate-float" style={{ animationDelay: '2s' }}>
-                <div className={`w-3 h-3 rounded-full ${isDarkMode ? 'bg-orange-500/50' : 'bg-orange-400/40'}`}></div>
-            </div>
+            <motion.div 
+                className="absolute top-20 left-10"
+                variants={floatVariants}
+                animate="float"
+            >
+                <div className={`w-4 h-4 rounded-full ${isDarkMode ? 'bg-orange-500/40' : 'bg-orange-400/30'}`}></div>
+            </motion.div>
+            
+            <motion.div 
+                className="absolute top-1/3 right-20"
+                variants={floatVariants}
+                animate="float"
+                transition={{ delay: 1 }}
+            >
+                <div className={`w-6 h-6 rounded-full ${isDarkMode ? 'bg-amber-500/30' : 'bg-amber-400/20'}`}></div>
+            </motion.div>
+            
+            <motion.div 
+                className="absolute bottom-40 left-1/4"
+                variants={floatVariants}
+                animate="float"
+                transition={{ delay: 2 }}
+            >
+                <div className={`w-3 h-3 rounded-full ${isDarkMode ? 'bg-orange-500/30' : 'bg-orange-400/20'}`}></div>
+            </motion.div>
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-                <div className="text-center">
+                <motion.div 
+                    className="text-center"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
                     {/* Profile image with elegant frame */}
-                    <div className="mb-12 relative inline-block">
+                    <motion.div 
+                        className="mb-12 relative inline-block"
+                        variants={itemVariants}
+                    >
                         <div className="relative h-72 w-72 mx-auto">
-                            <div className={`absolute inset-0 rounded-full ${isDarkMode ? 'bg-gradient-to-br from-orange-700 to-amber-600' : 'bg-gradient-to-br from-orange-400 to-amber-500'} transform rotate-45 animate-pulse-slow`}></div>
-                            <div className="absolute inset-2 rounded-full overflow-hidden shadow-2xl">
+                            <motion.div 
+                                className={`absolute inset-0 rounded-full ${isDarkMode ? 'bg-orange-800' : 'bg-orange-500'}`}
+                                variants={pulseVariants}
+                                animate="pulse"
+                            />
+                            <div className="absolute inset-2 rounded-full overflow-hidden shadow-xl border-2 border-white dark:border-orange-600">
                                 <img
                                     src="/logos/sheilla.jpeg"
                                     alt="Igiraneza Sheilla - Professional Portrait"
@@ -34,98 +109,105 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
                                 />
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Name with elegant typography */}
-                    <div className="mb-6">
-                        <h1 className={`text-5xl font-delius md:text-6xl font-bold mb-4 bg-clip-text ${isDarkMode ? 'text-white' : 'text-transparent bg-gradient-to-r from-orange-600 to-amber-500'} transition-all duration-700`}>
+                    <motion.div 
+                        className="mb-6"
+                        variants={itemVariants}
+                    >
+                        <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                             Igiraneza Sheilla
                         </h1>
-                        <div className="w-32 h-1 bg-gradient-to-r from-orange-400 to-amber-500 mx-auto rounded-full mb-4"></div>
-                        <p className={`text-xl md:text-2xl mb-8 font-medium ${isDarkMode ? 'text-orange-500' : 'text-orange-700'} transition-colors duration-500`}>
+                        <div className={`w-32 h-1 ${isDarkMode ? 'bg-orange-600' : 'bg-orange-500'} mx-auto rounded-full mb-4`}></div>
+                        <p className={`text-xl md:text-2xl mb-8 font-medium ${isDarkMode ? 'text-orange-400' : 'text-orange-600'}`}>
                             Transformational Leader | Social Entrepreneur | Community Builder
                         </p>
-                    </div>
+                    </motion.div>
 
                     {/* Mission statement with elegant card */}
-                    <div className={`max-w-5xl mx-auto mb-14 p-8 rounded-2xl ${isDarkMode ? 'bg-gray-800/40 backdrop-blur-sm border border-gray-700/50' : 'bg-white/70 backdrop-blur-sm border border-orange-100'} transition-all duration-500 `}>
-                        <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-500' : 'text-gray-700'} transition-colors duration-500 italic text-center`}>
+                    <motion.div 
+                        className={`max-w-5xl mx-auto mb-14 p-8 rounded-xl ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50'} `}
+                        variants={itemVariants}
+                    >
+                        <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} italic text-center`}>
                             "Passionate about creating sustainable change through innovative leadership, community engagement, and strategic partnerships. With over 5 years of experience in social entrepreneurship and community development, I'm committed to building bridges between vision and impact."
                         </p>
-                    </div>
+                    </motion.div>
 
                     {/* Key strengths grid */}
-                    <div className="grid md:grid-cols-3 gap-6 mb-14 max-w-4xl mx-auto">
-                        <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-gray-800/40 border border-gray-700/30' : 'bg-white/60 border border-orange-100'} backdrop-blur-sm transition-all duration-500 hover:transform hover:scale-105`}>
-                            <div className={`w-12 h-12 ${isDarkMode ? 'bg-orange-900/30' : 'bg-orange-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
-                                <Target className={`w-6 h-6 ${isDarkMode ? 'text-orange-500' : 'text-orange-600'}`} />
+                    <motion.div 
+                        className="grid md:grid-cols-3 gap-6 mb-14 max-w-4xl mx-auto"
+                        variants={itemVariants}
+                    >
+                        <div className={`p-6 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50 '} cursor-pointer transition-all duration-300 hover:shadow-lg`}>
+                            <div className={`w-12 h-12 ${isDarkMode ? 'bg-orange-900' : 'bg-orange-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
+                                <Target className={`w-6 h-6 ${isDarkMode ? 'text-orange-400' : 'text-orange-600'}`} />
                             </div>
-                            <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-orange-500' : 'text-orange-700'}`}>Strategic Vision</h3>
-                            <p className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-gray-600'}`}>Transforming ideas into impactful initiatives</p>
+                            <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-orange-300' : 'text-orange-700'}`}>Strategic Vision</h3>
+                            <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Transforming ideas into impactful initiatives</p>
                         </div>
-
-                        <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-gray-800/40 border border-gray-700/30' : 'bg-white/60 border border-orange-100'} backdrop-blur-sm transition-all duration-500 hover:transform hover:scale-105`}>
-                            <div className={`w-12 h-12 ${isDarkMode ? 'bg-amber-900/30' : 'bg-amber-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
-                                <Users className={`w-6 h-6 ${isDarkMode ? 'text-amber-500' : 'text-amber-600'}`} />
+                        
+                        <div className={`p-6 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50 '} cursor-pointer transition-all duration-300 hover:shadow-lg`}>
+                            <div className={`w-12 h-12 ${isDarkMode ? 'bg-amber-900' : 'bg-amber-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
+                                <Users className={`w-6 h-6 ${isDarkMode ? 'text-amber-400' : 'text-amber-600'}`} />
                             </div>
-                            <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-amber-500' : 'text-amber-700'}`}>Community Building</h3>
-                            <p className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-gray-600'}`}>Creating collaborative ecosystems for change</p>
+                            <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-amber-300' : 'text-amber-700'}`}>Community Building</h3>
+                            <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Creating collaborative ecosystems for change</p>
                         </div>
-
-                        <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-gray-800/40 border border-gray-700/30' : 'bg-white/60 border border-orange-100'} backdrop-blur-sm transition-all duration-500 hover:transform hover:scale-105`}>
-                            <div className={`w-12 h-12 ${isDarkMode ? 'bg-orange-900/30' : 'bg-orange-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
-                                <Heart className={`w-6 h-6 ${isDarkMode ? 'text-orange-500' : 'text-orange-600'}`} />
+                        
+                        <div className={`p-6 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50 '} cursor-pointer transition-all duration-300 hover:shadow-lg`}>
+                            <div className={`w-12 h-12 ${isDarkMode ? 'bg-orange-900' : 'bg-orange-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
+                                <Heart className={`w-6 h-6 ${isDarkMode ? 'text-orange-400' : 'text-orange-600'}`} />
                             </div>
-                            <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-orange-500' : 'text-orange-700'}`}>Social Impact</h3>
-                            <p className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-gray-600'}`}>Driving sustainable positive change</p>
+                            <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-orange-300' : 'text-orange-700'}`}>Social Impact</h3>
+                            <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Driving sustainable positive change</p>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Call to action buttons */}
-                    <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-                        <button
+                    <motion.div 
+                        className="flex flex-col sm:flex-row gap-5 justify-center items-center"
+                        variants={itemVariants}
+                    >
+                        <motion.button
                             onClick={() => setActiveSection('portfolio')}
-                            className={`group relative px-8 py-4 rounded-xl font-semibold transition-all duration-500 overflow-hidden ${isDarkMode ? 'bg-gradient-to-r bg-orange-800  text-white' : 'bg-gradient-to-r bg-orange-500 text-white'} shadow-lg hover:shadow-xl hover:transform hover:scale-105`}
+                            className={`group relative px-8 py-4 rounded-lg font-semibold transition-all duration-300 overflow-hidden ${isDarkMode ? 'bg-orange-700 hover:bg-orange-600 text-white' : 'bg-orange-600 hover:bg-orange-500 text-white'} shadow-md hover:shadow-lg`}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                         >
                             <span className="relative z-10 flex items-center">
                                 View My Work
                                 <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
                             </span>
-                            <div className="absolute inset-0 bg-gradient-to-r bg-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        </button>
-
-                        <a
+                        </motion.button>
+                        
+                        <motion.a
                             onClick={() => setActiveSection('contact')}
-                            rel="noopener noreferrer"
-                            className={`group relative px-8 py-4 rounded-xl font-semibold border-2 transition-all duration-500 overflow-hidden ${isDarkMode ? 'border-orange-500 text-orange-500 hover:bg-orange-800' : 'border-orange-500 text-orange-600 hover:bg-orange-500'} hover:text-white shadow-lg hover:shadow-xl hover:transform hover:scale-105`}
+                            className={`group relative px-8 py-4 rounded-lg font-semibold border transition-all duration-300 overflow-hidden ${isDarkMode ? 'border-orange-500 text-orange-400 hover:bg-orange-700' : 'border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white'} shadow-md hover:shadow-lg`}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                         >
                             <span className="relative z-10 flex items-center">
                                 <Linkedin className="w-5 h-5 mr-2" />
-                                Connect on Linkedn
+                                Connect on LinkedIn
                             </span>
-                        </a>
-                    </div>
+                        </motion.a>
+                    </motion.div>
 
-                </div>
+                    {/* Scroll indicator */}
+                    <motion.div 
+                        className="mt-16"
+                        variants={itemVariants}
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                    >
+                        <div className={`w-6 h-10 border-2 ${isDarkMode ? 'border-orange-500' : 'border-orange-500'} rounded-full flex justify-center`}>
+                            <div className={`w-1 h-3 ${isDarkMode ? 'bg-orange-500' : 'bg-orange-500'} rounded-full mt-2`}></div>
+                        </div>
+                    </motion.div>
+                </motion.div>
             </div>
-
-            {/* Custom CSS for animations */}
-            <style >{`
-                @keyframes float {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-15px); }
-                }
-                @keyframes pulse-slow {
-                    0%, 100% { opacity: 0.7; }
-                    50% { opacity: 0.9; }
-                }
-                .animate-float {
-                    animation: float 6s ease-in-out infinite;
-                }
-                .animate-pulse-slow {
-                    animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-                }
-            `}</style>
         </div>
     );
-}
+};

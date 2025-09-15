@@ -195,7 +195,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
                                 />
                             </div>
                             <div className="p-5">
-                                <div className={`inline-block px-3 py-1 ${isDarkMode ? 'bg-orange-600' : 'bg-orange-100'} ${isDarkMode ? 'text-white' : 'text-orange-800'} text-sm font-medium rounded-full mb-4`}>
+                                <div className={`inline-block px-3 py-1 ${isDarkMode ? 'bg-green-600' : 'bg-green-100'} ${isDarkMode ? 'text-white' : 'text-green-800'} text-sm font-medium rounded-full mb-4`}>
                                     {artefact.type}
                                 </div>
                                 <h3 className={`text-xl font-semibold mb-3 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -216,7 +216,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         onClick={() => handleViewClick(artefact.title)}
-                                        className={`flex items-center px-4 py-2 ${isDarkMode ? 'bg-orange-600 hover:bg-orange-700' : 'bg-orange-600 hover:bg-orange-700'} text-white rounded-lg text-sm font-medium transition-colors duration-200 flex-1 justify-center`}
+                                        className={`flex items-center px-4 py-2 ${isDarkMode ? 'bg-green-600 hover:bg-green-700' : 'bg-green-600 hover:bg-green-700'} text-white rounded-lg text-sm font-medium transition-colors duration-200 flex-1 justify-center`}
                                     >
                                         <Eye className="w-4 h-4 mr-2" />
                                         View Details
@@ -284,7 +284,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
                                                 transition={{ delay: index * 0.1 }}
                                                 className="flex items-start"
                                             >
-                                                <span className={`w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0 ${isDarkMode ? 'bg-orange-500' : 'bg-orange-400'}`}></span>
+                                                <span className={`w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0 ${isDarkMode ? 'bg-green-500' : 'bg-green-400'}`}></span>
                                                 {detail}
                                             </motion.li>
                                         ))}
@@ -294,7 +294,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         onClick={closePopup}
-                                        className={`mt-6 px-6 py-2 ${isDarkMode ? 'bg-orange-600 hover:bg-orange-700' : 'bg-orange-600 hover:bg-orange-700'} text-white rounded-lg font-medium transition-colors duration-200`}
+                                        className={`mt-6 px-6 py-2 ${isDarkMode ? 'bg-green-600 hover:bg-green-700' : 'bg-green-600 hover:bg-green-700'} text-white rounded-lg font-medium transition-colors duration-200`}
                                     >
                                         Close
                                     </motion.button>

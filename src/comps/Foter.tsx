@@ -30,7 +30,7 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                                 href="https://linkedin.com/in/Igiraneza-Sheilla"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`p-2 ${isDarkMode ? 'bg-gray-800 text-orange-400 hover:bg-orange-600' : 'bg-white text-orange-600 hover:bg-orange-600'} rounded-full hover:text-white transition-colors duration-200 shadow-sm`}
+                                className={`p-2 ${isDarkMode ? 'bg-gray-800 text-green-400 hover:bg-green-600' : 'bg-white text-green-600 hover:bg-green-600'} rounded-full hover:text-white transition-colors duration-200 shadow-sm`}
                                 aria-label="LinkedIn"
                             >
                                 <Linkedin className="w-5 h-5" />
@@ -39,14 +39,14 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                                 href="https://github.com/Igiraneza-Sheilla"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`p-2 ${isDarkMode ? 'bg-gray-800 text-orange-400 hover:bg-orange-600' : 'bg-white text-orange-600 hover:bg-orange-600'} rounded-full hover:text-white transition-colors duration-200 shadow-sm`}
+                                className={`p-2 ${isDarkMode ? 'bg-gray-800 text-green-400 hover:bg-green-600' : 'bg-white text-green-600 hover:bg-green-600'} rounded-full hover:text-white transition-colors duration-200 shadow-sm`}
                                 aria-label="GitHub"
                             >
                                 <Github className="w-5 h-5" />
                             </a>
                             <a
                                 href="mailto:s.igiraneza@alustudent.com"
-                                className={`p-2 ${isDarkMode ? 'bg-gray-800 text-orange-400 hover:bg-orange-600' : 'bg-white text-orange-600 hover:bg-orange-600'} rounded-full hover:text-white transition-colors duration-200 shadow-sm`}
+                                className={`p-2 ${isDarkMode ? 'bg-gray-800 text-green-400 hover:bg-green-600' : 'bg-white text-green-600 hover:bg-green-600'} rounded-full hover:text-white transition-colors duration-200 shadow-sm`}
                                 aria-label="Email"
                             >
                                 <Mail className="w-5 h-5" />
@@ -64,7 +64,7 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                                 <li key={item.id}>
                                     <button
                                         onClick={() => setActiveSection(item.id)}
-                                        className={`hover:${isDarkMode ? 'text-orange-400' : 'text-orange-600'} transition-colors duration-200`}
+                                        className={`hover:${isDarkMode ? 'text-green-400' : 'text-green-600'} transition-colors duration-200`}
                                     >
                                         {item.label}
                                     </button>
@@ -89,7 +89,7 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                                     href="https://linkedin.com/in/Igiraneza-Sheilla"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`hover:${isDarkMode ? 'text-orange-400' : 'text-orange-600'} transition-colors duration-200`}
+                                    className={`hover:${isDarkMode ? 'text-green-400' : 'text-green-600'} transition-colors duration-200`}
                                 >
                                     linkedin.com/in/Igiraneza-Sheilla
                                 </a>

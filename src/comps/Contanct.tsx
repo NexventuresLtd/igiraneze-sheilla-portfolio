@@ -40,7 +40,7 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
                             onChange={handleFormChange}
                             placeholder="Your Name"
                             required
-                            className={`w-full px-5 py-3 rounded-lg ${isDarkMode ? 'bg-gray-800 text-white placeholder-gray-400' : 'bg-white text-gray-900 placeholder-gray-500'} focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all duration-200`}
+                            className={`w-full px-5 py-3 rounded-lg ${isDarkMode ? 'bg-gray-800 text-white placeholder-gray-400' : 'bg-white text-gray-900 placeholder-gray-500'} focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-200`}
                         />
                         <input
                             type="email"
@@ -49,7 +49,7 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
                             onChange={handleFormChange}
                             placeholder="Your Email"
                             required
-                            className={`w-full px-5 py-3 rounded-lg ${isDarkMode ? 'bg-gray-800 text-white placeholder-gray-400' : 'bg-white text-gray-900 placeholder-gray-500'} focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all duration-200`}
+                            className={`w-full px-5 py-3 rounded-lg ${isDarkMode ? 'bg-gray-800 text-white placeholder-gray-400' : 'bg-white text-gray-900 placeholder-gray-500'} focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-200`}
                         />
                         <textarea
                             name="message"
@@ -58,11 +58,11 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
                             placeholder="Your Message"
                             required
                             rows={5}
-                            className={`w-full px-5 py-3 rounded-lg ${isDarkMode ? 'bg-gray-800 text-white placeholder-gray-400' : 'bg-white text-gray-900 placeholder-gray-500'} focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all duration-200`}
+                            className={`w-full px-5 py-3 rounded-lg ${isDarkMode ? 'bg-gray-800 text-white placeholder-gray-400' : 'bg-white text-gray-900 placeholder-gray-500'} focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-200`}
                         ></textarea>
                         <button
                             type="submit"
-                            className={`w-full py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-semibold transition-transform duration-200 transform hover:scale-105`}
+                            className={`w-full py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition-transform duration-200 transform hover:scale-105`}
                         >
                             Send Message
                         </button>
@@ -85,16 +85,16 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
 
                     <div className="flex flex-col gap-4 mt-4">
                         <div className="flex items-center gap-4 justify-center md:justify-start">
-                            <Mail className={`w-6 h-6 ${isDarkMode ? 'text-orange-400' : 'text-orange-600'}`} />
+                            <Mail className={`w-6 h-6 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
                             <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>s.igiraneza@alustudent.com</span>
                         </div>
                         <div className="flex items-center gap-4 justify-center md:justify-start">
-                            <Linkedin className={`w-6 h-6 ${isDarkMode ? 'text-orange-400' : 'text-orange-600'}`} />
+                            <Linkedin className={`w-6 h-6 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
                             <a
                                 href="https://linkedin.com/in/Igiraneza-Sheilla"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`${isDarkMode ? 'text-orange-400 hover:text-orange-300' : 'text-orange-600 hover:text-orange-700'} transition-colors duration-200`}
+                                className={`${isDarkMode ? 'text-green-400 hover:text-green-300' : 'text-green-600 hover:text-green-700'} transition-colors duration-200`}
                             >
                                 linkedin.com/in/Igiraneza-Sheilla
                             </a>
@@ -116,7 +116,7 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label={item.label}
-                                className={`p-3 ${isDarkMode ? 'bg-gray-800 text-orange-400 hover:bg-orange-600' : 'bg-orange-100 text-orange-600 hover:bg-orange-600'} rounded-full hover:text-white transition-all duration-200 transform hover:scale-110`}
+                                className={`p-3 ${isDarkMode ? 'bg-gray-800 text-green-400 hover:bg-green-600' : 'bg-green-100 text-green-600 hover:bg-green-600'} rounded-full hover:text-white transition-all duration-200 transform hover:scale-110`}
                             >
                                 {item.icon}
                             </a>

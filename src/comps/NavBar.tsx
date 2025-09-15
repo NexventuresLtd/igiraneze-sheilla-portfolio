@@ -21,11 +21,11 @@ interface NavProps {
 }
 export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, isMenuOpen, activeSection, setIsDarkMode }: NavProps) => {
     return (
-        <nav className={`${isDarkMode ? 'bg-gray-900 border-gray-700' : 'bg-gray-100 border-orange-100'}  sticky top-0 z-50`}>
+        <nav className={`${isDarkMode ? 'bg-gray-900 border-gray-700' : 'bg-gray-100 border-green-100'}  sticky top-0 z-50`}>
             <div className="max-w-full md:max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <div className="flex-shrink-0">
-                        <h1 className={`text-2xl font-delius font-bold ${isDarkMode ? 'text-orange-400' : 'text-orange-600'}`}>
+                        <h1 className={`text-2xl font-delius font-bold ${isDarkMode ? 'text-green-400' : 'text-green-600'}`}>
                             Igiraneza Sheilla
                         </h1>
                     </div>
@@ -45,8 +45,8 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
                                                 setActiveSection(item.id)
                                         }}
                                         className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${activeSection === item.id
-                                            ? `${isDarkMode ? 'bg-orange-900 text-orange-200' : 'bg-orange-100 text-orange-800'}`
-                                            : `${isDarkMode ? 'text-gray-300 hover:bg-gray-700 hover:text-orange-300' : 'text-gray-700 hover:bg-gray-50 hover:text-orange-600'}`
+                                            ? `${isDarkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-800'}`
+                                            : `${isDarkMode ? 'text-gray-300 hover:bg-gray-700 hover:text-green-300' : 'text-gray-700 hover:bg-gray-50 hover:text-green-600'}`
                                             }`}
                                     >
                                         <Icon className="w-4 h-4 mr-2" />
@@ -92,8 +92,8 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
                                             setIsMenuOpen(false);
                                         }}
                                         className={`flex items-center w-full px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${activeSection === item.id
-                                            ? `${isDarkMode ? 'bg-orange-900 text-orange-200' : 'bg-orange-100 text-orange-800'}`
-                                            : `${isDarkMode ? 'text-gray-300 hover:bg-gray-700 hover:text-orange-300' : 'text-gray-700 hover:bg-gray-50 hover:text-orange-600'}`
+                                            ? `${isDarkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-800'}`
+                                            : `${isDarkMode ? 'text-gray-300 hover:bg-gray-700 hover:text-green-300' : 'text-gray-700 hover:bg-gray-50 hover:text-green-600'}`
                                             }`}
                                     >
                                         <Icon className="w-4 h-4 mr-2" />

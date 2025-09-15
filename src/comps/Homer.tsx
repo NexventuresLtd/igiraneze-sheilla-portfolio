@@ -62,7 +62,7 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
                 variants={floatVariants}
                 animate="float"
             >
-                <div className={`w-4 h-4 rounded-full ${isDarkMode ? 'bg-orange-500/40' : 'bg-orange-400/30'}`}></div>
+                <div className={`w-4 h-4 rounded-full ${isDarkMode ? 'bg-green-500/40' : 'bg-green-400/30'}`}></div>
             </motion.div>
             
             <motion.div 
@@ -71,7 +71,7 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
                 animate="float"
                 transition={{ delay: 1 }}
             >
-                <div className={`w-6 h-6 rounded-full ${isDarkMode ? 'bg-amber-500/30' : 'bg-amber-400/20'}`}></div>
+                <div className={`w-6 h-6 rounded-full ${isDarkMode ? 'bg-green-500/30' : 'bg-green-400/20'}`}></div>
             </motion.div>
             
             <motion.div 
@@ -80,7 +80,7 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
                 animate="float"
                 transition={{ delay: 2 }}
             >
-                <div className={`w-3 h-3 rounded-full ${isDarkMode ? 'bg-orange-500/30' : 'bg-orange-400/20'}`}></div>
+                <div className={`w-3 h-3 rounded-full ${isDarkMode ? 'bg-green-500/30' : 'bg-green-400/20'}`}></div>
             </motion.div>
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
@@ -97,11 +97,11 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
                     >
                         <div className="relative h-72 w-72 mx-auto">
                             <motion.div 
-                                className={`absolute inset-0 rounded-full ${isDarkMode ? 'bg-orange-800' : 'bg-orange-500'}`}
+                                className={`absolute inset-0 rounded-full ${isDarkMode ? 'bg-green-800' : 'bg-green-500'}`}
                                 variants={pulseVariants}
                                 animate="pulse"
                             />
-                            <div className="absolute inset-2 rounded-full overflow-hidden shadow-xl border-2 border-white dark:border-orange-600">
+                            <div className="absolute inset-2 rounded-full overflow-hidden shadow-xl border-2 border-white dark:border-green-600">
                                 <img
                                     src="/logos/sheilla.jpeg"
                                     alt="Igiraneza Sheilla - Professional Portrait"
@@ -119,8 +119,8 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
                         <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                             Igiraneza Sheilla
                         </h1>
-                        <div className={`w-32 h-1 ${isDarkMode ? 'bg-orange-600' : 'bg-orange-500'} mx-auto rounded-full mb-4`}></div>
-                        <p className={`text-xl md:text-2xl mb-8 font-medium ${isDarkMode ? 'text-orange-400' : 'text-orange-600'}`}>
+                        <div className={`w-32 h-1 ${isDarkMode ? 'bg-green-600' : 'bg-green-500'} mx-auto rounded-full mb-4`}></div>
+                        <p className={`text-xl md:text-2xl mb-8 font-medium ${isDarkMode ? 'text-green-400' : 'text-green-600'}`}>
                             Transformational Leader | Social Entrepreneur | Community Builder
                         </p>
                     </motion.div>
@@ -141,26 +141,26 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
                         variants={itemVariants}
                     >
                         <div className={`p-6 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50 '} cursor-pointer transition-all duration-300 hover:shadow-lg`}>
-                            <div className={`w-12 h-12 ${isDarkMode ? 'bg-orange-900' : 'bg-orange-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
-                                <Target className={`w-6 h-6 ${isDarkMode ? 'text-orange-400' : 'text-orange-600'}`} />
+                            <div className={`w-12 h-12 ${isDarkMode ? 'bg-green-900' : 'bg-green-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
+                                <Target className={`w-6 h-6 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
                             </div>
-                            <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-orange-300' : 'text-orange-700'}`}>Strategic Vision</h3>
+                            <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-green-300' : 'text-green-700'}`}>Strategic Vision</h3>
                             <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Transforming ideas into impactful initiatives</p>
                         </div>
                         
                         <div className={`p-6 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50 '} cursor-pointer transition-all duration-300 hover:shadow-lg`}>
-                            <div className={`w-12 h-12 ${isDarkMode ? 'bg-amber-900' : 'bg-amber-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
-                                <Users className={`w-6 h-6 ${isDarkMode ? 'text-amber-400' : 'text-amber-600'}`} />
+                            <div className={`w-12 h-12 ${isDarkMode ? 'bg-green-900' : 'bg-green-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
+                                <Users className={`w-6 h-6 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
                             </div>
-                            <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-amber-300' : 'text-amber-700'}`}>Community Building</h3>
+                            <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-green-300' : 'text-green-700'}`}>Community Building</h3>
                             <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Creating collaborative ecosystems for change</p>
                         </div>
                         
                         <div className={`p-6 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50 '} cursor-pointer transition-all duration-300 hover:shadow-lg`}>
-                            <div className={`w-12 h-12 ${isDarkMode ? 'bg-orange-900' : 'bg-orange-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
-                                <Heart className={`w-6 h-6 ${isDarkMode ? 'text-orange-400' : 'text-orange-600'}`} />
+                            <div className={`w-12 h-12 ${isDarkMode ? 'bg-green-900' : 'bg-green-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
+                                <Heart className={`w-6 h-6 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
                             </div>
-                            <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-orange-300' : 'text-orange-700'}`}>Social Impact</h3>
+                            <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-green-300' : 'text-green-700'}`}>Social Impact</h3>
                             <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Driving sustainable positive change</p>
                         </div>
                     </motion.div>
@@ -172,7 +172,7 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
                     >
                         <motion.button
                             onClick={() => setActiveSection('portfolio')}
-                            className={`group relative px-8 py-4 rounded-lg font-semibold transition-all duration-300 overflow-hidden ${isDarkMode ? 'bg-orange-700 hover:bg-orange-600 text-white' : 'bg-orange-600 hover:bg-orange-500 text-white'} shadow-md hover:shadow-lg`}
+                            className={`group relative px-8 py-4 rounded-lg font-semibold transition-all duration-300 overflow-hidden ${isDarkMode ? 'bg-green-700 hover:bg-green-600 text-white' : 'bg-green-600 hover:bg-green-500 text-white'} shadow-md hover:shadow-lg`}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -184,7 +184,7 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
                         
                         <motion.a
                             onClick={() => setActiveSection('contact')}
-                            className={`group relative px-8 py-4 rounded-lg font-semibold border transition-all duration-300 overflow-hidden ${isDarkMode ? 'border-orange-500 text-orange-400 hover:bg-orange-700' : 'border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white'} shadow-md hover:shadow-lg`}
+                            className={`group relative px-8 py-4 rounded-lg font-semibold border transition-all duration-300 overflow-hidden ${isDarkMode ? 'border-green-500 text-green-400 hover:bg-green-700' : 'border-green-500 text-green-600 hover:bg-green-500 hover:text-white'} shadow-md hover:shadow-lg`}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -202,8 +202,8 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
                         animate={{ y: [0, 10, 0] }}
                         transition={{ duration: 2, repeat: Infinity }}
                     >
-                        <div className={`w-6 h-10 border-2 ${isDarkMode ? 'border-orange-500' : 'border-orange-500'} rounded-full flex justify-center`}>
-                            <div className={`w-1 h-3 ${isDarkMode ? 'bg-orange-500' : 'bg-orange-500'} rounded-full mt-2`}></div>
+                        <div className={`w-6 h-10 border-2 ${isDarkMode ? 'border-green-500' : 'border-green-500'} rounded-full flex justify-center`}>
+                            <div className={`w-1 h-3 ${isDarkMode ? 'bg-green-500' : 'bg-green-500'} rounded-full mt-2`}></div>
                         </div>
                     </motion.div>
                 </motion.div>

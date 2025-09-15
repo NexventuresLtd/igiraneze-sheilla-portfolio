@@ -106,7 +106,7 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
     }, []);
 
     return (
-        <div className={`min-h-screen py-20 px-4 ${isDarkMode ? 'bg-gradient-to-br from-gray-900 to-gray-800' : 'bg-gradient-to-br from-orange-50 to-gray-100'}`}>
+        <div className={`min-h-screen py-20 px-4 ${isDarkMode ? 'bg-gradient-to-br from-gray-900 to-gray-800' : 'bg-gradient-to-br from-green-50 to-gray-100'}`}>
             <div className="w-11/12 mx-auto">
                 <div className="flex flex-col sm:flex-row justify-between items-center mb-12">
                     <div className="text-center sm:text-left">
@@ -120,10 +120,10 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                     <button
                         onClick={() => toggleReadAloud()}
                         className={`mt-6 sm:mt-0 flex items-center px-5 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${isReading && !currentReadingSection
-                            ? 'bg-orange-600 text-white shadow-lg'
+                            ? 'bg-green-600 text-white shadow-lg'
                             : isDarkMode
-                                ? 'bg-gray-800 text-orange-400 hover:bg-orange-600 hover:text-white shadow-md'
-                                : 'bg-white text-orange-600 hover:bg-orange-600 hover:text-white shadow-md'
+                                ? 'bg-gray-800 text-green-400 hover:bg-green-600 hover:text-white shadow-md'
+                                : 'bg-white text-green-600 hover:bg-green-600 hover:text-white shadow-md'
                             }`}
                     >
                         {isReading && !currentReadingSection ? (
@@ -143,8 +143,8 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                             data-section="intro"
                             className={`mb-16 text-center transition-all duration-700 ease-out ${visibleSections.has('intro') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                         >
-                            <div className={`inline-flex items-center justify-center w-20 h-20 ${isDarkMode ? 'bg-gradient-to-br from-orange-700 to-orange-600' : 'bg-gradient-to-br from-orange-200 to-orange-100'} rounded-2xl mb-6 transition-all duration-500`}>
-                                <BookOpen className={`w-9 h-9 ${isDarkMode ? 'text-white' : 'text-orange-600'} transition-colors duration-500`} />
+                            <div className={`inline-flex items-center justify-center w-20 h-20 ${isDarkMode ? 'bg-gradient-to-br from-green-700 to-green-600' : 'bg-gradient-to-br from-green-200 to-green-100'} rounded-2xl mb-6 transition-all duration-500`}>
+                                <BookOpen className={`w-9 h-9 ${isDarkMode ? 'text-white' : 'text-green-600'} transition-colors duration-500`} />
                             </div>
                             <p className={`text-xl italic max-w-2xl mx-auto ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} transition-colors duration-500`}>
                                 "Leadership is not about being in charge. It is about taking care of those in your charge." - Simon Sinek
@@ -158,8 +158,8 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                             className={`mb-16 transition-all duration-700 ease-out ${visibleSections.has('learning') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                         >
                             <div className="flex flex-col md:flex-row items-start justify-between mb-8">
-                                <h3 className={`text-2xl md:text-3xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-orange-400' : 'text-orange-600'} flex items-center transition-colors duration-500`}>
-                                    <div className={`p-2 mr-4 rounded-xl ${isDarkMode ? 'bg-orange-900/30' : 'bg-orange-100'} transition-colors duration-500`}>
+                                <h3 className={`text-2xl md:text-3xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'} flex items-center transition-colors duration-500`}>
+                                    <div className={`p-2 mr-4 rounded-xl ${isDarkMode ? 'bg-green-900/30' : 'bg-green-100'} transition-colors duration-500`}>
                                         <Lightbulb className="w-7 h-7" />
                                     </div>
                                     Learning Experiences That Transformed Me
@@ -177,17 +177,17 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                 </button>
                             </div>
                             <div className="space-y-6">
-                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-orange-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
+                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
                                     <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
                                         My journey began with a profound realization during my first community project in 2019. I discovered that traditional top-down approaches to leadership often fail to create sustainable change. This experience taught me the power of collaborative leadership and the importance of listening before leading.
                                     </p>
                                 </div>
-                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-orange-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
+                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
                                     <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
                                         The failure of my initial project became a catalyst for growth, forcing me to reevaluate my assumptions about leadership and embrace a more inclusive approach. Another transformative moment came when I had to navigate a crisis that threatened to shut down our social enterprise.
                                     </p>
                                 </div>
-                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-orange-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
+                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
                                     <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
                                         This experience taught me resilience, adaptability, and the crucial skill of turning challenges into opportunities. It was during this period that I learned to lead with vulnerability, admitting when I didn't have all the answers and leveraging the collective wisdom of my team.
                                     </p>
@@ -202,8 +202,8 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                             className={`mb-16 transition-all duration-700 ease-out ${visibleSections.has('theories') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                         >
                             <div className="flex flex-col md:flex-row items-start justify-between mb-8">
-                                <h3 className={`text-2xl md:text-3xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-orange-400' : 'text-orange-600'} flex items-center transition-colors duration-500`}>
-                                    <div className={`p-2 mr-4 rounded-xl ${isDarkMode ? 'bg-orange-900/30' : 'bg-orange-100'} transition-colors duration-500`}>
+                                <h3 className={`text-2xl md:text-3xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'} flex items-center transition-colors duration-500`}>
+                                    <div className={`p-2 mr-4 rounded-xl ${isDarkMode ? 'bg-green-900/30' : 'bg-green-100'} transition-colors duration-500`}>
                                         <BookOpen className="w-7 h-7" />
                                     </div>
                                     Applications of Leadership Theories
@@ -221,21 +221,21 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                 </button>
                             </div>
                             <div className="grid md:grid-cols-2 gap-6 mb-6">
-                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-orange-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                    <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-orange-300' : 'text-orange-700'} transition-colors duration-500`}>Servant Leadership</h4>
+                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
+                                    <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'} transition-colors duration-500`}>Servant Leadership</h4>
                                     <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
                                         Servant leadership principles have been particularly influential, shaping my belief that leaders exist to serve their teams and communities rather than the other way around. This philosophy has guided my approach to mentoring young entrepreneurs and building inclusive organizational cultures.
                                     </p>
                                 </div>
-                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-orange-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                    <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-orange-300' : 'text-orange-700'} transition-colors duration-500`}>Transformational Leadership</h4>
+                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
+                                    <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'} transition-colors duration-500`}>Transformational Leadership</h4>
                                     <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
                                         I have drawn heavily from transformational leadership theory, focusing on inspiring and motivating others to exceed their own self-interests for the greater good. This approach has been essential in building coalitions and partnerships that have amplified our collective impact.
                                     </p>
                                 </div>
                             </div>
-                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-orange-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-orange-300' : 'text-orange-700'} transition-colors duration-500`}>Situational Leadership</h4>
+                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
+                                <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'} transition-colors duration-500`}>Situational Leadership</h4>
                                 <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
                                     Situational leadership principles have helped me adapt my leadership style to different contexts and team members' needs, ensuring that my approach is always tailored to the specific challenges and opportunities at hand.
                                 </p>
@@ -249,8 +249,8 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                             className={`mb-16 transition-all duration-700 ease-out ${visibleSections.has('skills') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                         >
                             <div className="flex flex-col md:flex-row items-start justify-between mb-8">
-                                <h3 className={`text-2xl md:text-3xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-orange-400' : 'text-orange-600'} flex items-center transition-colors duration-500`}>
-                                    <div className={`p-2 mr-4 rounded-xl ${isDarkMode ? 'bg-orange-900/30' : 'bg-orange-100'} transition-colors duration-500`}>
+                                <h3 className={`text-2xl md:text-3xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'} flex items-center transition-colors duration-500`}>
+                                    <div className={`p-2 mr-4 rounded-xl ${isDarkMode ? 'bg-green-900/30' : 'bg-green-100'} transition-colors duration-500`}>
                                         <TrendingUp className="w-7 h-7" />
                                     </div>
                                     Skills, Knowledge, and Mindset Transformation
@@ -268,21 +268,21 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                             </button>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6 mb-6">
-                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-orange-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-orange-300' : 'text-orange-700'} transition-colors duration-500`}>Technical to Holistic</h4>
+                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
+                                <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'} transition-colors duration-500`}>Technical to Holistic</h4>
                                 <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
                                     My leadership capabilities have evolved from technical expertise to a holistic understanding encompassing emotional intelligence, systems thinking, and cultural competency.
                                 </p>
                             </div>
-                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-orange-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-orange-300' : 'text-orange-700'} transition-colors duration-500`}>Communication Mastery</h4>
+                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
+                                <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'} transition-colors duration-500`}>Communication Mastery</h4>
                                 <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
                                     My communication skills have been refined through countless presentations, negotiations, and difficult conversations that required empathy and clarity.
                                 </p>
                             </div>
                         </div>
-                        <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-orange-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                            <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-orange-300' : 'text-orange-700'} transition-colors duration-500`}>Growth Mindset</h4>
+                        <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
+                            <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'} transition-colors duration-500`}>Growth Mindset</h4>
                             <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
                                 My mindset has shifted from viewing leadership as a position of authority to understanding it as a practice of service and continuous learning. I've learned to embrace uncertainty, welcome feedback, and view failures as learning opportunities.
                             </p>
@@ -296,8 +296,8 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                         className={`transition-all duration-700 ease-out ${visibleSections.has('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                     >
                         <div className="flex flex-col md:flex-row items-start justify-between mb-8">
-                            <h3 className={`text-2xl md:text-3xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-orange-400' : 'text-orange-600'} flex items-center transition-colors duration-500`}>
-                                <div className={`p-2 mr-4 rounded-xl ${isDarkMode ? 'bg-orange-900/30' : 'bg-orange-100'} transition-colors duration-500`}>
+                            <h3 className={`text-2xl md:text-3xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'} flex items-center transition-colors duration-500`}>
+                                <div className={`p-2 mr-4 rounded-xl ${isDarkMode ? 'bg-green-900/30' : 'bg-green-100'} transition-colors duration-500`}>
                                     <Target className="w-7 h-7" />
                                 </div>
                                 Mission Journey and Post-Graduation Plans
@@ -315,17 +315,17 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                             </button>
                         </div>
                         <div className="space-y-6">
-                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-orange-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
+                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
                                 <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
                                     My mission has always been to create sustainable positive change through innovative leadership and strategic partnerships. This mission has been the north star guiding all my professional and personal decisions.
                                 </p>
                             </div>
-                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-orange-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
+                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
                                 <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
                                     Looking ahead, I plan to expand this mission by establishing a leadership development institute focused on emerging market entrepreneurs and social innovators.
                                 </p>
                             </div>
-                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-orange-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
+                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
                                 <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
                                     Post-graduation, I intend to leverage the knowledge and network gained through my studies to scale our impact across multiple regions. My goal is to create a sustainable ecosystem that supports the next generation of leaders while continuing to address pressing social and economic challenges. This journey has taught me that true leadership is not about reaching a destination, but about continuously growing and empowering others to reach their full potential.
                                 </p>

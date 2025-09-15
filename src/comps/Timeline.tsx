@@ -122,7 +122,7 @@ export const RenderTimeline = ({ isDarkMode }: Timeline) => {
                 <div className="relative" ref={timelineRef}>
                     {/* Timeline line */}
                     <div className={`absolute left-4 md:left-1/2 top-0 bottom-0 w-1 transform -translate-x-1/2 md:translate-x-0 
-                        ${isDarkMode ? 'bg-gradient-to-b from-orange-500 to-orange-700' : 'bg-gradient-to-b from-orange-300 to-orange-500'}`}></div>
+                        ${isDarkMode ? 'bg-gradient-to-b from-green-500 to-green-700' : 'bg-gradient-to-b from-green-300 to-green-500'}`}></div>
 
                     <motion.div
                         variants={containerVariants}
@@ -154,7 +154,7 @@ export const RenderTimeline = ({ isDarkMode }: Timeline) => {
                                         <motion.div
                                             variants={iconVariants}
                                             whileHover="hover"
-                                            className={`flex items-center justify-center w-12 h-12 ${isDarkMode ? 'bg-orange-600' : 'bg-orange-500'} 
+                                            className={`flex items-center justify-center w-12 h-12 ${isDarkMode ? 'bg-green-600' : 'bg-green-500'} 
                                                     rounded-full z-10 relative mx-auto md:mx-0 mb-4 md:mb-0`}
                                         >
                                             <Icon className="w-6 h-6 text-white" />
@@ -165,8 +165,8 @@ export const RenderTimeline = ({ isDarkMode }: Timeline) => {
                                             </h3>
                                             <span className={`inline-block px-3 py-1 mt-2 sm:mt-0 text-sm font-medium rounded-full 
                                                 ${isDarkMode
-                                                    ? 'bg-orange-700 text-white'
-                                                    : 'bg-orange-100 text-orange-800'
+                                                    ? 'bg-green-700 text-white'
+                                                    : 'bg-green-100 text-green-800'
                                                 }`}>
                                                 {event.year}
                                             </span>
@@ -176,8 +176,8 @@ export const RenderTimeline = ({ isDarkMode }: Timeline) => {
                                         </p>
                                         <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
                                             ${isDarkMode
-                                                ? 'bg-gray-700 text-orange-300'
-                                                : 'bg-orange-50 text-orange-700'
+                                                ? 'bg-gray-700 text-green-300'
+                                                : 'bg-green-50 text-green-700'
                                             }`}>
                                             <Award className="w-4 h-4 mr-2" />
                                             {event.achievement}

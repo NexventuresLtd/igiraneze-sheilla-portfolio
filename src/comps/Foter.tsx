@@ -15,7 +15,7 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
 
     return (
         <footer className={`py-12 px-4 ${isDarkMode ? 'bg-gray-900 text-gray-300' : 'bg-gray-100 text-gray-700'} border-t ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}>
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-11/12 mx-auto">
                 <div className="grid md:grid-cols-3 gap-8 mb-8">
                     {/* Brand Section */}
                     <div>

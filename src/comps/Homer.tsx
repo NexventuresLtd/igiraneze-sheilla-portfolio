@@ -9,11 +9,11 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
         <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900' : 'bg-gradient-to-br from-orange-50 to-orange-100'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div className="text-center">
-                    <div className="mb-8">
+                    <div className="mb-8 h-64 w-64 overflow-hidden aspect-square rounded-full mx-auto shadow-lg border-4 border-orange-200 dark:border-orange-800">
                         <img
-                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face"
+                            src="/logos/sheilla.jpeg"
                             alt="Igiraneza Sheilla - Professional Portrait"
-                            className="w-32 h-32 rounded-full mx-auto shadow-lg border-4 border-orange-200 dark:border-orange-800"
+                            className="w-full h-full aspect-square"
                         />
                     </div>
                     <h1 className={`text-5xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>

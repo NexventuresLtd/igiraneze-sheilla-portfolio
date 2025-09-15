@@ -6,6 +6,7 @@ import { RenderEssay } from './comps/essay';
 import { RenderContact } from './comps/Contanct';
 import { RenderNavigation } from './comps/NavBar';
 import { Footer } from './comps/Foter';
+import { RenderEducation } from './comps/Education';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -32,6 +33,7 @@ const App = () => {
         {activeSection === 'portfolio' && <RenderPortfolio isDarkMode={isDarkMode} />}
         {activeSection === 'timeline' && <RenderTimeline isDarkMode={isDarkMode} />}
         {activeSection === 'essay' && <RenderEssay isDarkMode={isDarkMode} />}
+        {activeSection === 'education' && <RenderEducation isDarkMode={isDarkMode} />}
         {activeSection === 'contact' && <RenderContact isDarkMode={isDarkMode} />}
       </main>
       <Footer isDarkMode={isDarkMode} setActiveSection={setActiveSection}/>

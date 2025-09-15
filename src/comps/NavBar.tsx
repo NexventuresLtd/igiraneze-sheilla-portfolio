@@ -1,11 +1,12 @@
-import { BookOpen, Briefcase, Clock, FileText, Home, Mail, Menu, Moon, Sun, X } from "lucide-react";
+import { Book, BookOpen, Briefcase, Clock, FileText, Home, Mail, Menu, Moon, Sun, X } from "lucide-react";
 
 const navigation = [
     { id: 'home', label: 'Home', icon: Home },
     { id: 'resume', label: 'CV/Resume', icon: FileText },
     { id: 'portfolio', label: 'Portfolio', icon: Briefcase },
     { id: 'timeline', label: 'Timeline', icon: Clock },
-    { id: 'essay', label: 'Leadership Essay', icon: BookOpen },
+    { id: 'essay', label: 'Essay', icon: BookOpen },
+    { id: 'education', label: 'Education', icon: Book },
     { id: 'contact', label: 'Contact', icon: Mail }
 ];
 
@@ -21,7 +22,7 @@ interface NavProps {
 }
 export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, isMenuOpen, activeSection, setIsDarkMode }: NavProps) => {
     return (
-        <nav className={`${isDarkMode ? 'bg-gray-900 border-gray-700' : 'bg-gray-100 border-green-100'}  sticky top-0 z-50`}>
+        <nav className={`${isDarkMode ? 'bg-gray-950 border-gray-700' : 'bg-gray-100 border-green-100'}  sticky top-0 z-50`}>
             <div className="max-w-full md:max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <div className="flex-shrink-0">

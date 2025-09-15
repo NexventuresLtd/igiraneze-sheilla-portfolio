@@ -2,7 +2,7 @@ import { Book, BookOpen, Briefcase, Clock, FileText, Home, Mail, Menu, Moon, Sun
 
 const navigation = [
     { id: 'home', label: 'Home', icon: Home },
-    { id: 'resume', label: 'CV/Resume', icon: FileText },
+    { id: 'resume', label: 'Resume', icon: FileText },
     { id: 'portfolio', label: 'Portfolio', icon: Briefcase },
     { id: 'timeline', label: 'Timeline', icon: Clock },
     { id: 'essay', label: 'Essay', icon: BookOpen },

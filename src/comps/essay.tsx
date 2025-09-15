@@ -107,7 +107,7 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
 
     return (
         <div className={`min-h-screen py-20 px-4 ${isDarkMode ? 'bg-gradient-to-br from-gray-900 to-gray-800' : 'bg-gradient-to-br from-orange-50 to-gray-100'}`}>
-            <div className="w-11/12 max-w-6xl mx-auto">
+            <div className="w-11/12 mx-auto">
                 <div className="flex flex-col sm:flex-row justify-between items-center mb-12">
                     <div className="text-center sm:text-left">
                         <h2 className={`text-4xl md:text-5xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'} transition-all duration-700 ease-out`}>
@@ -135,7 +135,7 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                     </button>
                 </div>
 
-                <div className={`rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-800 to-gray-700 shadow-2xl' : 'bg-white shadow-xl'} p-8 md:p-12 transition-all duration-500`}>
+                <div className={`rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-800 to-gray-700' : 'bg-white'} p-8 md:p-12 transition-all duration-500`}>
                     <article className="max-w-none">
                         {/* Introduction */}
                         <div

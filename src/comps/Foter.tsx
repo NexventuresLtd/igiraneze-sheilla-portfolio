@@ -101,7 +101,7 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                 {/* Copyright */}
                 <div className={`pt-8 border-t md:flex justify-between ${isDarkMode ? 'border-gray-800' : 'border-gray-200'} text-center text-sm`}>
                     <p>© {new Date().getFullYear()} Igiraneza Sheilla. All rights reserved.</p>
-                    <p className="mt-1">Designed and built with <a href="https://www.nexventures.net/">Nexventures</a></p>
+                    <p className="mt-1">Designed and built with <a href="https://www.nexventures.net/" className="text-red-500">Nexventures</a></p>
                 </div>
             </div>
         </footer>

@@ -44,7 +44,7 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
 
                             {/* Left Side - Profile Image */}
                             <motion.div
-                                className="order-1 lg:order-2 flex justify-center"
+                                className="order-1 lg:order-2 flex justify-center max-md:mt-10"
                                 initial={{ opacity: 0, x: -50 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -119,10 +119,10 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8, delay: 1.2 }}
                                 >
-                                    <h2 className={`text-2xl font-semibold mb-4 ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>
+                                    <h2 className={`text-lg md:text-2xl font-semibold mb-4 ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>
                                         My Mission
                                     </h2>
-                                    <p className={`text-lg ${isDarkMode ? 'text-slate-300' : 'text-slate-600'} leading-relaxed mb-6`}>
+                                    <p className={`text-xs md:text-lg ${isDarkMode ? 'text-slate-300' : 'text-slate-600'} leading-relaxed mb-6`}>
                                         To improve the quality of education in Mahama Refugee Camp, ensuring children and young people have access to better learning opportunities. Through trained teachers, adequate resources, and safe classrooms, I aim to help learners succeed, support their dreams, and contribute to community development.
                                     </p>
                                 </motion.div>

@@ -22,6 +22,10 @@ const App = () => {
       document.documentElement.classList.remove('dark');
     }
   }, [isDarkMode]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeSection]);
+
 
 
   return (

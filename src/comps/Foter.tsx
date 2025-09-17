@@ -1,4 +1,4 @@
-import { BookOpen, Briefcase, Clock, FileText, Github, Home, Linkedin, Mail } from "lucide-react";
+import { BookOpen, Briefcase, Clock, FileText, Home, Instagram, Linkedin, Mail } from "lucide-react";
 interface renderProps {
     isDarkMode: boolean;
     setActiveSection: React.Dispatch<React.SetStateAction<string>>;
@@ -36,13 +36,13 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                                 <Linkedin className="w-5 h-5" />
                             </a>
                             <a
-                                href="https://github.com/Igiraneza-Sheilla"
+                                href="https://www.instagram.com/sheillaigiraneza/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`p-2 ${isDarkMode ? 'bg-gray-800 text-green-400 hover:bg-green-600' : 'bg-white text-green-600 hover:bg-green-600'} rounded-full hover:text-white transition-colors duration-200 shadow-sm`}
-                                aria-label="GitHub"
+                                aria-label="Instagram"
                             >
-                                <Github className="w-5 h-5" />
+                                <Instagram className="w-5 h-5" />
                             </a>
                             <a
                                 href="mailto:s.igiraneza@alustudent.com"
@@ -86,12 +86,12 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                             <p className="flex items-start">
                                 <Linkedin className="w-5 h-5 mr-3 mt-1 flex-shrink-0" />
                                 <a
-                                    href="https://linkedin.com/in/Igiraneza-Sheilla"
+                                    href="https://www.linkedin.com/in/igiraneza-sheilla-5a03102a3/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className={`hover:${isDarkMode ? 'text-green-400' : 'text-green-600'} transition-colors duration-200`}
                                 >
-                                    linkedin.com/in/Igiraneza-Sheilla
+                                    linkedin.com/in/igiraneza-sheilla-5a03102a3
                                 </a>
                             </p>
                         </div>
@@ -101,7 +101,9 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                 {/* Copyright */}
                 <div className={`pt-8 border-t md:flex justify-between ${isDarkMode ? 'border-gray-800' : 'border-gray-200'} text-center text-sm`}>
                     <p>© {new Date().getFullYear()} Igiraneza Sheilla. All rights reserved.</p>
-                    <p className="mt-1">Designed and built with <a href="https://www.nexventures.net/" className="text-red-500">Nexventures</a></p>
+                    <p className="mt-1">Designed and built by Igiraneza Sheilla
+                        <a href="https://www.nexventures.net/" className="text-red-500 hidden">Nexventures</a>
+                    </p>
                 </div>
             </div>
         </footer>

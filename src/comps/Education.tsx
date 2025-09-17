@@ -1,4 +1,4 @@
-import { GraduationCap, Calendar, BookOpen, Award, MapPin } from "lucide-react";
+import { GraduationCap, Calendar, MapPin, Trophy } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 
 interface EducationProps {
@@ -6,119 +6,108 @@ interface EducationProps {
 }
 
 export const RenderEducation = ({ isDarkMode }: EducationProps) => {
-    const containerVariants:Variants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.3,
-                delayChildren: 0.2
+                staggerChildren: 0.2,
+                delayChildren: 0.1
             }
         }
     };
 
-    const itemVariants:Variants = {
-        hidden: { y: 50, opacity: 0 },
+    const itemVariants: Variants = {
+        hidden: { y: 30, opacity: 0 },
         visible: {
             y: 0,
             opacity: 1,
             transition: {
-                duration: 0.6,
+                duration: 0.5,
                 ease: "easeOut"
             }
         }
     };
 
     return (
-        <div className={`min-h-screen py-20 px-4 sm:px-6 lg:px-8 ${isDarkMode ? 'bg-slate-900' : 'bg-slate-50'}`}>
-            <div className="max-w-4xl mx-auto">
+        <div className={`min-h-screen py-12 md:py-16 px-4 sm:px-6 lg:px-8 ${isDarkMode ? 'bg-slate-900' : 'bg-gray-50'}`}>
+            <div className="max-w-full md:max-w-11/12 mx-auto">
                 {/* Section Header */}
-                <motion.div 
-                    className="text-center mb-16"
+                <motion.div
+                    className="mb-12 text-center md:text-left"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.6 }}
                 >
-                    <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full mb-6 ${isDarkMode ? 'bg-green-800' : 'bg-green-100'}`}>
-                        <GraduationCap className={`w-10 h-10 ${isDarkMode ? 'text-green-300' : 'text-green-700'}`} />
+                    <div className="flex flex-col md:flex-row items-center mb-6">
+                        <div className={`w-12 h-12 rounded-lg flex items-center justify-center mr-0 md:mr-4 mb-4 md:mb-0 ${isDarkMode ? 'bg-green-900' : 'bg-green-100'}`}>
+                            <GraduationCap className={`w-6 h-6 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
+                        </div>
+                        <h2 className={`text-2xl md:text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-slate-700'}`}>
+                            Education & Achievements
+                        </h2>
                     </div>
-                    <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-                        Academic Journey
-                    </h2>
-                    <p className={`text-lg ${isDarkMode ? 'text-green-200' : 'text-green-700'} max-w-2xl mx-auto mb-6`}>
-                        Pursuing excellence through formal education and professional certifications
-                    </p>
-                    <div className={`w-24 h-1 ${isDarkMode ? 'bg-green-500' : 'bg-green-400'} mx-auto`} />
+                    <div className={`w-16 h-1 mx-auto md:mx-0 ${isDarkMode ? 'bg-green-500' : 'bg-green-600'}`} />
                 </motion.div>
 
-                {/* Education Timeline */}
-                <motion.div 
-                    className="relative space-y-12"
+                <motion.div
+                    className="flex flex-col lg:flex-row gap-8"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
                 >
-                    {/* Timeline Line */}
-                    <div className={`absolute left-8 top-12 bottom-12 w-1 ${isDarkMode ? 'bg-green-700' : 'bg-green-300'} hidden md:block`} />
-
-                    {/* Bachelor's Degree */}
-                    <motion.div 
-                        className="relative md:pl-24"
+                    {/* Education Section */}
+                    <motion.div
                         variants={itemVariants}
+                        className="flex-1"
                     >
-                        {/* Timeline Dot */}
-                        <div className={`absolute left-0 top-6 w-16 h-16 rounded-full flex items-center justify-center z-10 ${isDarkMode ? 'bg-green-700' : 'bg-green-500'}`}>
-                            <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
-                                <BookOpen className="w-6 h-6 text-green-600" />
-                            </div>
-                        </div>
-
-                        <div className={`p-8 rounded-2xl border-2 ${isDarkMode ? 'bg-slate-800 border-green-700' : 'bg-white border-green-300'}`}>
-                            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                        <div className={`rounded-lg border-l-4 ${isDarkMode ? 'border-green-500 bg-slate-800' : 'border-green-600 bg-white'} p-6 md:p-8 `}>
+                            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
                                 <div className="flex-1">
-                                    <h3 className={`text-2xl md:text-3xl font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+                                    <h3 className={`text-xl md:text-2xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-slate-700'}`}>
                                         Bachelor of Science in Entrepreneurial Leadership
                                     </h3>
-                                    <div className={`flex items-center mb-3 text-lg ${isDarkMode ? 'text-green-300' : 'text-green-700'} font-medium`}>
-                                        <GraduationCap className="w-5 h-5 mr-3" />
+                                    <div className={`flex items-center mb-3 text-lg ${isDarkMode ? 'text-green-400' : 'text-green-600'} font-semibold`}>
+                                        <GraduationCap className="w-5 h-5 mr-2" />
                                         African Leadership University
                                     </div>
-                                    <div className="flex flex-wrap items-center gap-4 text-sm">
-                                        <div className={`flex items-center ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+                                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 text-sm mb-4">
+                                        <div className={`flex items-center ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                                             <Calendar className="w-4 h-4 mr-2" />
                                             May 2023 – Present
                                         </div>
-                                        <div className={`flex items-center ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+                                        <div className={`flex items-center ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                                             <MapPin className="w-4 h-4 mr-2" />
                                             Kigali, Rwanda
                                         </div>
                                     </div>
                                 </div>
-                                <div className={`mt-4 md:mt-0 md:ml-6 px-4 py-2 rounded-full text-sm font-medium ${isDarkMode ? 'bg-green-800 text-green-200' : 'bg-green-100 text-green-700'}`}>
+                                <div className={`mt-4 lg:mt-0 lg:ml-6 px-4 py-2 rounded-md text-sm font-medium self-start ${isDarkMode ? 'bg-green-900 text-green-200 border border-green-700' : 'bg-green-50 text-green-700 border border-green-200'}`}>
                                     In Progress
                                 </div>
                             </div>
 
+                            <div className={`${isDarkMode ? 'text-gray-300' : 'text-gray-700'} mb-6`}>
+                                <p className="text-base leading-relaxed">
+                                    Program designed to develop future business leaders, entrepreneurs and change-makers.
+                                </p>
+                            </div>
+
                             <div className="space-y-4">
-                                <div className={`${isDarkMode ? 'text-slate-300' : 'text-slate-700'}`}>
-                                    <p className="font-semibold mb-2">🎯 Specialization:</p>
-                                    <p>3rd year student majoring in Education & Healthcare pathways</p>
-                                </div>
-                                
-                                <div className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-                                    <p className="font-semibold mb-3">📚 Relevant Coursework:</p>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div>
+                                    <h4 className={`font-semibold mb-3 ${isDarkMode ? 'text-white' : 'text-slate-700'}`}>
+                                        Key Skills Acquired:
+                                    </h4>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                         {[
-                                            'Creativity & Innovation',
-                                            'Systems Thinking', 
-                                            'Financial Management',
-                                            'Business Management',
-                                            'Reflective Thinking',
-                                            'Building Startups'
-                                        ].map((course) => (
-                                            <div key={course} className="flex items-center">
-                                                <div className={`w-2 h-2 rounded-full mr-3 ${isDarkMode ? 'bg-green-500' : 'bg-green-400'}`} />
-                                                <span className="text-sm">{course}</span>
+                                            'Planning and Managing Education Projects',
+                                            'Future Thinking',
+                                            'Building Startups',
+                                            'Creativity and Innovation'
+                                        ].map((skill) => (
+                                            <div key={skill} className="flex items-center">
+                                                <div className={`w-2 h-2 rounded-full mr-3 ${isDarkMode ? 'bg-green-400' : 'bg-green-600'}`} />
+                                                <span className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>{skill}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -127,66 +116,56 @@ export const RenderEducation = ({ isDarkMode }: EducationProps) => {
                         </div>
                     </motion.div>
 
-                    {/* CPA Certification */}
-                    <motion.div 
-                        className="relative md:pl-24"
+                    {/* Achievements Section */}
+                    <motion.div
                         variants={itemVariants}
+                        className="flex-1"
                     >
-                        {/* Timeline Dot */}
-                        <div className={`absolute left-0 top-6 w-16 h-16 rounded-full flex items-center justify-center z-10 ${isDarkMode ? 'bg-green-700' : 'bg-green-500'}`}>
-                            <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
-                                <Award className="w-6 h-6 text-green-600" />
+                        <div className={`rounded-lg border-l-4 ${isDarkMode ? 'border-green-500 bg-slate-800' : 'border-green-600 bg-white'} p-6 md:p-8 `}>
+                            <div className="flex items-center mb-6">
+                                <Trophy className={`w-6 h-6 mr-3 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
+                                <h3 className={`text-xl md:text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-slate-700'}`}>
+                                    Key Achievements & Contributions
+                                </h3>
                             </div>
-                        </div>
 
-                        <div className={`p-8 rounded-2xl border-2 ${isDarkMode ? 'bg-slate-800 border-green-700' : 'bg-white border-green-300'}`}>
-                            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                                <div className="flex-1">
-                                    <h3 className={`text-2xl md:text-3xl font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-                                        CPA Certification Program
-                                    </h3>
-                                    <div className={`flex items-center mb-3 text-lg ${isDarkMode ? 'text-green-300' : 'text-green-700'} font-medium`}>
-                                        <Award className="w-5 h-5 mr-3" />
-                                        Institute of Certified Public Accountants of Rwanda
-                                    </div>
-                                    <div className="flex flex-wrap items-center gap-4 text-sm">
-                                        <div className={`flex items-center ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-                                            <Calendar className="w-4 h-4 mr-2" />
-                                            April 2025 – Present
-                                        </div>
-                                        <div className={`flex items-center ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-                                            <MapPin className="w-4 h-4 mr-2" />
-                                            Rwanda
+                            <div className="space-y-6">
+                                <div className={`${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                    <div className="flex items-start mb-4">
+                                        <div className={`w-2 h-2 rounded-full mt-2 mr-4 flex-shrink-0 ${isDarkMode ? 'bg-green-400' : 'bg-green-600'}`} />
+                                        <div>
+                                            <p className="font-medium mb-1">National Dialogue Participation</p>
+                                            <p className="text-sm leading-relaxed">
+                                                Participated in the National Dialogue on Positive Parenting and the launch of the
+                                                <span className="font-semibold"> ITETERO application</span> to support parents and children.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className={`mt-4 md:mt-0 md:ml-6 px-4 py-2 rounded-full text-sm font-medium ${isDarkMode ? 'bg-green-800 text-green-200' : 'bg-green-100 text-green-700'}`}>
-                                    Pursuing
-                                </div>
-                            </div>
 
-                            <div className="space-y-4">
-                                <div className={`${isDarkMode ? 'text-slate-300' : 'text-slate-700'}`}>
-                                    <p className="font-semibold mb-2">🎯 Objective:</p>
-                                    <p>Pursuing Certified Public Accountant certification with focus on strategic leadership</p>
+                                <div className={`${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                    <div className="flex items-start mb-4">
+                                        <div className={`w-2 h-2 rounded-full mt-2 mr-4 flex-shrink-0 ${isDarkMode ? 'bg-green-400' : 'bg-green-600'}`} />
+                                        <div>
+                                            <p className="font-medium mb-1">Community Advocacy</p>
+                                            <p className="text-sm leading-relaxed">
+                                                Contributed to child protection and rights campaigns in
+                                                <span className="font-semibold"> Bugesera and Nyaruguru</span> communities.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                
-                                <div className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-                                    <p className="font-semibold mb-3">📊 Core Curriculum:</p>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                        {[
-                                            'Strategy & Leadership',
-                                            'Corporate Finance',
-                                            'Business Law',
-                                            'Strategic Performance Management',
-                                            'Advanced Accounting',
-                                            'Auditing & Assurance'
-                                        ].map((course) => (
-                                            <div key={course} className="flex items-center">
-                                                <div className={`w-2 h-2 rounded-full mr-3 ${isDarkMode ? 'bg-green-500' : 'bg-green-400'}`} />
-                                                <span className="text-sm">{course}</span>
-                                            </div>
-                                        ))}
+
+                                <div className={`${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                    <div className="flex items-start">
+                                        <div className={`w-2 h-2 rounded-full mt-2 mr-4 flex-shrink-0 ${isDarkMode ? 'bg-green-400' : 'bg-green-600'}`} />
+                                        <div>
+                                            <p className="font-medium mb-1">AI-Driven Social Impact</p>
+                                            <p className="text-sm leading-relaxed">
+                                                Supported an AI-driven data collection project in
+                                                <span className="font-semibold"> Gatsibo</span> aimed at reducing early pregnancies among girls.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -194,18 +173,17 @@ export const RenderEducation = ({ isDarkMode }: EducationProps) => {
                     </motion.div>
                 </motion.div>
 
-                {/* Footer Quote */}
-                <motion.div 
-                    className="text-center mt-16"
+                {/* Professional Summary */}
+                <motion.div
+                    className="mt-12 text-center"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1 }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
                 >
-                    <div className={`inline-block px-8 py-6 rounded-2xl ${isDarkMode ? 'bg-green-800/30' : 'bg-green-100/80'} backdrop-blur-sm`}>
-                        <p className={`text-lg italic ${isDarkMode ? 'text-green-200' : 'text-green-700'}`}>
-                            "Education is not the filling of a pail, but the lighting of a fire."
+                    <div className={`inline-block px-6 py-5 md:px-8 md:py-6 rounded-lg border-2 ${isDarkMode ? 'border-green-800 bg-slate-800' : 'border-green-200 bg-white'} shadow-sm max-w-3xl`}>
+                        <p className={`text-base md:text-lg italic ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                            "Committed to leveraging education and innovation to drive positive social change and entrepreneurial excellence."
                         </p>
-                        <p className={`mt-2 ${isDarkMode ? 'text-green-300' : 'text-green-600'}`}>- William Butler Yeats</p>
                     </div>
                 </motion.div>
             </div>

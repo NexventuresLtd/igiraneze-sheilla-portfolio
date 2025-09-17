@@ -1,4 +1,4 @@
-import { Award, Lightbulb, Target, TrendingUp, Users } from "lucide-react";
+import { BookOpen, Heart, Users, Shield, Target, Briefcase } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation, type Variants } from "framer-motion";
 
@@ -13,39 +13,44 @@ export const RenderTimeline = ({ isDarkMode }: Timeline) => {
 
     const timelineEvents = [
         {
-            year: "2019",
-            title: "Founded First Social Enterprise",
-            description: "Launched a social enterprise focused on providing digital literacy training to underserved communities.",
-            icon: Lightbulb,
-            achievement: "Served 500+ community members"
-        },
-        {
-            year: "2020",
-            title: "Leadership Development Program",
-            description: "Completed intensive leadership certification and began mentoring young entrepreneurs.",
-            icon: Award,
-            achievement: "Mentored 25+ entrepreneurs"
-        },
-        {
-            year: "2021",
-            title: "Strategic Partnership Initiative",
-            description: "Established partnerships with 3 major organizations to expand community impact.",
-            icon: Users,
-            achievement: "3x program reach expansion"
-        },
-        {
-            year: "2023",
-            title: "Innovation Lab Launch",
-            description: "Created an innovation lab to support tech startups in emerging markets.",
+            year: "2018 – Present",
+            title: "Program Assistant – Youth Empowerment",
+            organization: "Youth Vision Rwanda",
+            description: "Guide and mentor youth on how to start small businesses, inspired by principles of faith and resilience. Provide training on entrepreneurship, leadership and financial literacy.",
             icon: Target,
-            achievement: "15 startups accelerated"
+            achievement: "Empowering young people for self-reliance"
         },
         {
-            year: "2024",
-            title: "Regional Leadership Recognition",
-            description: "Received regional award for entrepreneurial leadership and community impact.",
-            icon: TrendingUp,
-            achievement: "Regional Excellence Award"
+            year: "2021 – 2023",
+            title: "Volunteer",
+            organization: "Rwanda Book Mobile",
+            description: "Encouraged children to develop a love for reading through mobile library programs. Organized reading activities and storytelling sessions to improve literacy skills.",
+            icon: BookOpen,
+            achievement: "Strengthened community engagement"
+        },
+        {
+            year: "2021 – 2024",
+            title: "Regional Coordinator",
+            organization: "Youth Impact Mission",
+            description: "Coordinated youth development programs at the regional level, reaching diverse communities. Provided mentorship and leadership training for young people.",
+            icon: Users,
+            achievement: "Developed organizational and planning skills"
+        },
+        {
+            year: "2022 – 2023",
+            title: "Peer Facilitator",
+            organization: "Save the Children Rwanda",
+            description: "Facilitated peer learning sessions with young people in Mahama Refugee Camp. Supported children and youth with life skills, education awareness, and leadership training.",
+            icon: Heart,
+            achievement: "Promoted children's rights and participation"
+        },
+        {
+            year: "2025 – Present",
+            title: "Assistant – Child Protection and Rights, ECD, and Education",
+            organization: "Plan International Rwanda",
+            description: "Assisted in implementing child protection and early childhood development programs. Supported education projects by ensuring safe learning environments.",
+            icon: Shield,
+            achievement: "Advocacy and program management experience"
         }
     ];
 
@@ -60,38 +65,18 @@ export const RenderTimeline = ({ isDarkMode }: Timeline) => {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2
+                staggerChildren: 0.15
             }
         }
     };
 
     const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 0, x: -20 },
         visible: {
             opacity: 1,
-            y: 0,
+            x: 0,
             transition: {
-                duration: 0.6,
-                ease: "easeOut"
-            }
-        }
-    };
-
-    const hoverVariants: Variants = {
-        hover: {
-            y: -5,
-            transition: {
-                duration: 0.3,
-                ease: "easeOut"
-            }
-        }
-    };
-
-    const iconVariants: Variants = {
-        hover: {
-            scale: 1.1,
-            transition: {
-                duration: 0.3,
+                duration: 0.5,
                 ease: "easeOut"
             }
         }
@@ -99,15 +84,15 @@ export const RenderTimeline = ({ isDarkMode }: Timeline) => {
 
     return (
         <div className={`min-h-screen py-16 px-4 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-            <div className="max-w-6xl mx-auto w-full lg:max-w-11/12">
+            <div className="max-w-full lg:max-w-11/12 mx-auto">
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className={`text-4xl md:text-5xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}
+                        className={`text-3xl md:text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}
                     >
-                        Leadership Journey Timeline
+                        Professional and Leadership Experience
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -115,20 +100,20 @@ export const RenderTimeline = ({ isDarkMode }: Timeline) => {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto`}
                     >
-                        Key milestones and achievements in my entrepreneurial leadership journey.
+                        Building leadership skills through meaningful work in youth development, education, and community empowerment.
                     </motion.p>
                 </div>
 
                 <div className="relative" ref={timelineRef}>
                     {/* Timeline line */}
-                    <div className={`absolute left-4 md:left-1/2 top-0 bottom-0 w-1 transform -translate-x-1/2 md:translate-x-0 
-                        ${isDarkMode ? 'bg-gradient-to-b from-green-500 to-green-700' : 'bg-gradient-to-b from-green-300 to-green-500'}`}></div>
+                    <div className={`absolute left-6 top-0 bottom-0 w-0.5 
+                        ${isDarkMode ? 'bg-green-600' : 'bg-green-500'}`}></div>
 
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
                         animate={controls}
-                        className="space-y-4"
+                        className="space-y-8"
                     >
                         {timelineEvents.map((event, index) => {
                             const Icon = event.icon;
@@ -136,53 +121,54 @@ export const RenderTimeline = ({ isDarkMode }: Timeline) => {
                                 <motion.div
                                     key={index}
                                     variants={itemVariants}
-                                    className="flex flex-col md:flex-row items-start relative"
+                                    className="relative flex items-start"
                                 >
+                                    {/* Timeline dot */}
+                                    <div className={`flex-shrink-0 w-12 h-12 ${isDarkMode ? 'bg-green-600' : 'bg-green-500'} 
+                                        rounded-full flex items-center justify-center relative z-10`}>
+                                        <Icon className="w-6 h-6 text-white" />
+                                    </div>
 
-                                    {/* Content card */}
-                                    <motion.div
-                                        variants={hoverVariants}
-                                        whileHover="hover"
-                                        className={`ml-0 md:ml-8 w-full md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:ml-8' : 'md:ml-auto md:mr-8'} 
-                                        rounded-xl p-6
-                                        ${isDarkMode
-                                                ? 'bg-gradient-to-r from-gray-800 to-gray-700 text-white'
-                                                : 'bg-gradient-to-r from-white to-gray-50 text-gray-900'
-                                            }`}
-                                    >
-                                        {/* Timeline dot with animation */}
-                                        <motion.div
-                                            variants={iconVariants}
-                                            whileHover="hover"
-                                            className={`flex items-center justify-center w-12 h-12 ${isDarkMode ? 'bg-green-600' : 'bg-green-500'} 
-                                                    rounded-full z-10 relative mx-auto md:mx-0 mb-4 md:mb-0`}
-                                        >
-                                            <Icon className="w-6 h-6 text-white" />
-                                        </motion.div>
-                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-                                            <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                                                {event.title}
-                                            </h3>
-                                            <span className={`inline-block px-3 py-1 mt-2 sm:mt-0 text-sm font-medium rounded-full 
+                                    {/* Content */}
+                                    <div className="ml-6 flex-1">
+                                        <div className={`${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} 
+                                            border-2 rounded-lg p-6`}>
+                                            
+                                            {/* Header */}
+                                            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
+                                                <div className="flex-1">
+                                                    <h3 className={`text-xl font-bold mb-1 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                                                        {event.title}
+                                                    </h3>
+                                                    <p className={`text-lg font-semibold ${isDarkMode ? 'text-green-400' : 'text-green-600'} mb-2`}>
+                                                        {event.organization}
+                                                    </p>
+                                                </div>
+                                                <span className={`inline-block px-4 py-2 text-sm font-semibold rounded-lg 
+                                                    ${isDarkMode
+                                                        ? 'bg-green-700 text-white'
+                                                        : 'bg-green-100 text-green-800'
+                                                    }`}>
+                                                    {event.year}
+                                                </span>
+                                            </div>
+
+                                            {/* Description */}
+                                            <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-4 leading-relaxed`}>
+                                                {event.description}
+                                            </p>
+
+                                            {/* Achievement */}
+                                            <div className={`inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium border-2
                                                 ${isDarkMode
-                                                    ? 'bg-green-700 text-white'
-                                                    : 'bg-green-100 text-green-800'
+                                                    ? 'border-green-600 text-green-400 bg-gray-700'
+                                                    : 'border-green-200 text-green-700 bg-green-50'
                                                 }`}>
-                                                {event.year}
-                                            </span>
+                                                <Briefcase className="w-4 h-4 mr-2" />
+                                                {event.achievement}
+                                            </div>
                                         </div>
-                                        <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-3 leading-relaxed`}>
-                                            {event.description}
-                                        </p>
-                                        <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
-                                            ${isDarkMode
-                                                ? 'bg-gray-700 text-green-300'
-                                                : 'bg-green-50 text-green-700'
-                                            }`}>
-                                            <Award className="w-4 h-4 mr-2" />
-                                            {event.achievement}
-                                        </div>
-                                    </motion.div>
+                                    </div>
                                 </motion.div>
                             );
                         })}

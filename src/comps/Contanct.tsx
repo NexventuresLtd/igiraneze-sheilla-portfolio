@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Instagram, Linkedin, Mail } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -20,8 +20,8 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
     };
 
     return (
-        <div className={`min-h-screen py-20 px-4 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-            <div className="max-w-7xl mx-auto w-11/12 flex flex-col md:flex-row gap-12 items-start justify-center">
+        <div className={`py-20 px-4 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+            <div className="max-w-full md:max-w-11/12 mx-auto flex flex-col md:flex-row gap-12 items-start justify-center">
                 {/* Contact Form */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -91,12 +91,12 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
                         <div className="flex items-center gap-4 justify-center md:justify-start">
                             <Linkedin className={`w-6 h-6 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
                             <a
-                                href="https://linkedin.com/in/Igiraneza-Sheilla"
+                                href="https://www.linkedin.com/in/igiraneza-sheilla-5a03102a3/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`${isDarkMode ? 'text-green-400 hover:text-green-300' : 'text-green-600 hover:text-green-700'} transition-colors duration-200`}
                             >
-                                linkedin.com/in/Igiraneza-Sheilla
+                                linkedin.com/in/igiraneza-sheilla-5a03102a3/
                             </a>
                         </div>
                     </div>
@@ -106,9 +106,9 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
                     </h4>
                     <div className="flex gap-4 justify-center md:justify-start">
                         {[ 
-                            { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/in/Igiraneza-Sheilla', label: 'Book' },
-                            { icon: <Github className="w-5 h-5" />, href: 'https://github.com/Igiraneza-Sheilla', label: 'GitHub' },
-                            { icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/Igiraneza-Sheilla', label: 'Twitter' },
+                            { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/igiraneza-sheilla-5a03102a3/', label: 'Book' },
+                            { icon: <Instagram className="w-5 h-5" />, href: 'https://www.instagram.com/sheillaigiraneza/', label: 'Instagram' },
+                            { icon: <Mail className="w-5 h-5" />, href: 'mailto:s.igiraneza@alustudent.com', label: 'Email' },
                         ].map(item => (
                             <a
                                 key={item.label}

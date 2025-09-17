@@ -3,15 +3,16 @@ import { RenderHome } from './comps/Homer';
 import { RenderPortfolio } from './comps/Projects';
 import { RenderTimeline } from './comps/Timeline';
 import { RenderEssay } from './comps/essay';
-import { RenderContact } from './comps/Contanct';
+
 import { RenderNavigation } from './comps/NavBar';
 import { Footer } from './comps/Foter';
 import { RenderEducation } from './comps/Education';
+import { RenderAbout } from './comps/About';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Dark mode toggle
   useEffect(() => {
@@ -34,9 +35,10 @@ const App = () => {
         {activeSection === 'timeline' && <RenderTimeline isDarkMode={isDarkMode} />}
         {activeSection === 'essay' && <RenderEssay isDarkMode={isDarkMode} />}
         {activeSection === 'education' && <RenderEducation isDarkMode={isDarkMode} />}
-        {activeSection === 'contact' && <RenderContact isDarkMode={isDarkMode} />}
+        {activeSection === 'about' && <RenderAbout isDarkMode={isDarkMode} />}
+
       </main>
-      <Footer isDarkMode={isDarkMode} setActiveSection={setActiveSection}/>
+      <Footer isDarkMode={isDarkMode} setActiveSection={setActiveSection} />
     </div>
   );
 }

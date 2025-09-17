@@ -1,4 +1,4 @@
-import { BookOpen, Lightbulb, Target, TrendingUp, Volume2, VolumeX } from "lucide-react";
+import { BookOpen, Lightbulb, Quote, Target, TrendingUp, Volume2, VolumeX } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 interface EssayProps {
@@ -12,9 +12,8 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
 
     // Create refs using useRef directly
     const introRef = useRef<HTMLDivElement>(null);
-    const learningRef = useRef<HTMLDivElement>(null);
-    const theoriesRef = useRef<HTMLDivElement>(null);
-    const skillsRef = useRef<HTMLDivElement>(null);
+    const transformationRef = useRef<HTMLDivElement>(null);
+    const experiencesRef = useRef<HTMLDivElement>(null);
     const missionRef = useRef<HTMLDivElement>(null);
     const conclusionRef = useRef<HTMLDivElement>(null);
 
@@ -35,7 +34,7 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
         );
 
         // Observe all section elements
-        const refs = [introRef, learningRef, theoriesRef, skillsRef, missionRef, conclusionRef];
+        const refs = [introRef, transformationRef, experiencesRef, missionRef, conclusionRef];
         refs.forEach((ref) => {
             if (ref.current) observer.observe(ref.current);
         });
@@ -46,11 +45,11 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
     // Get all essay text for reading
     const getEssayText = (sectionId?: string) => {
         const essaySections = {
-            introduction: "Reflective Leadership Essay. A comprehensive reflection on my leadership journey, growth, and future aspirations.",
-            learning: "Learning Experiences That Transformed Me. My journey began with a profound realization during my first community project in 2019. I discovered that traditional top-down approaches to leadership often fail to create sustainable change. This experience taught me the power of collaborative leadership and the importance of listening before leading. The failure of my initial project became a catalyst for growth, forcing me to reevaluate my assumptions about leadership and embrace a more inclusive approach. Another transformative moment came when I had to navigate a crisis that threatened to shut down our social enterprise. This experience taught me resilience, adaptability, and the crucial skill of turning challenges into opportunities. It was during this period that I learned to lead with vulnerability, admitting when I didn't have all the answers and leveraging the collective wisdom of my team.",
-            theories: "Applications of Leadership Theories. Throughout my leadership journey, I have consciously applied various leadership theories to guide my practice. Servant leadership principles have been particularly influential, shaping my belief that leaders exist to serve their teams and communities rather than the other way around. This philosophy has guided my approach to mentoring young entrepreneurs and building inclusive organizational cultures. I have also drawn heavily from transformational leadership theory, focusing on inspiring and motivating others to exceed their own self-interests for the greater good. This approach has been essential in building coalitions and partnerships that have amplified our collective impact. Additionally, situational leadership principles have helped me adapt my leadership style to different contexts and team members' needs.",
-            skills: "Skills, Knowledge, and Mindset Transformation. My leadership capabilities have evolved significantly over the past five years. Initially focused on technical skills and domain expertise, I have developed a more holistic understanding of leadership that encompasses emotional intelligence, systems thinking, and cultural competency. My communication skills have been refined through countless presentations, negotiations, and difficult conversations that required empathy and clarity. Perhaps most importantly, my mindset has shifted from viewing leadership as a position of authority to understanding it as a practice of service and continuous learning. I have learned to embrace uncertainty, welcome feedback, and view failures as learning opportunities rather than setbacks. This growth mindset has enabled me to take on increasingly complex challenges and support others in their own development journeys.",
-            mission: "Mission Journey and Post-Graduation Plans. My mission has always been to create sustainable positive change through innovative leadership and strategic partnerships. This mission has been the north star guiding all my professional and personal decisions. Looking ahead, I plan to expand this mission by establishing a leadership development institute focused on emerging market entrepreneurs and social innovators. Post-graduation, I intend to leverage the knowledge and network gained through my studies to scale our impact across multiple regions. My goal is to create a sustainable ecosystem that supports the next generation of leaders while continuing to address pressing social and economic challenges. This journey has taught me that true leadership is not about reaching a destination, but about continuously growing and empowering others to reach their full potential."
+            introduction: "Leadership Reflection Essay. Introduction. My leadership journey has been both personal and professional, shaped by my mission to improve the quality of education and create opportunities for young people. Leadership, for me, is not just about holding a position of authority, but about guiding, influencing, and serving others in a way that inspires growth and transformation. As I look back at my learning experiences, I see how they have expanded my skills, reshaped my mindset, and given me the confidence to pursue my mission and future aspirations.",
+            transformation: "Transformation of Skills, Knowledge and Mindsets. Throughout my journey, I have experienced a transformation in skills, knowledge and mindset that has shaped me into a stronger leader. I have strengthened my abilities in data collection, teamwork, public speaking and leadership through projects that required me to listen carefully, plan effectively and coordinate with others. Alongside these practical skills, I deepened my understanding of leadership theories such as transformational and servant leadership, which provided me with the tools to reflect on my actions and refine my approach. Most importantly, my mindset has shifted. I no longer view challenges as obstacles, but as opportunities to learn and grow. By embracing mistakes and seeking feedback, I have developed a growth mindset that pushes me to continuously improve both personally and professionally.",
+            experiences: "Specific Learning Experiences and Leadership Theory Application. One of the most meaningful learning experiences I had was leading a peer study group. At first, the group lacked direction and some members felt discouraged. I applied transformational leadership by setting a clear vision, encouraging participation, and creating an atmosphere of trust. I motivated the group to stay focused, and as a result, our collaboration improved and everyone gained confidence in their learning. Another valuable experience came from coordinating a community education activity in the camp. The project required mobilizing learners, organizing resources, and making sure activities ran smoothly. Here, I applied principles of servant leadership, putting the needs of the learners first and ensuring they felt supported. By listening to their challenges and incorporating their feedback, I helped create an inclusive and engaging environment.",
+            mission: "Connection to Mission Journey, Career Aspirations and Future Plans. My mission is to improve education in Mahama Refugee Camp and beyond by ensuring learners have access to quality teaching, materials, and safe learning spaces. Everything I have learned in my leadership journey directly connects to this mission. The artefacts I worked on, including my portfolio reflections, mission statement and project experiences, serve as evidence of how I am preparing to create real impact. Post-graduation, I plan to use my leadership skills in the education and community development sector. Whether I work in nonprofit organizations, schools or community initiatives, my goal is to be a change-maker who uses leadership to empower others. The insights I gained about teamwork, adaptability and servant leadership will guide me in building sustainable solutions that transform learners' futures.",
+            conclusion: "Conclusion. My leadership journey has been one of growth, reflection, and transformation. The experiences I gained, the theories I applied and the artefacts I created have shaped me into a leader who values service, adaptability and empowerment. I now carry not only improved skills and knowledge but also a mindset that sees leadership as a lifelong journey. As I move forward, I am confident that these lessons will continue to guide me in achieving my mission and contributing positively to the lives of others."
         };
 
         if (sectionId) {
@@ -106,24 +105,24 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
     }, []);
 
     return (
-        <div className={`min-h-screen py-20 px-4 ${isDarkMode ? 'bg-gradient-to-br from-gray-900 to-gray-800' : 'bg-gradient-to-br from-green-50 to-gray-100'}`}>
-            <div className="w-11/12 mx-auto">
+        <div className={`min-h-screen py-12 px-4 sm:px-6 lg:px-8 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+            <div className="max-w-full md:max-w-11/12 mx-auto">
                 <div className="flex flex-col sm:flex-row justify-between items-center mb-12">
                     <div className="text-center sm:text-left">
-                        <h2 className={`text-4xl md:text-5xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'} transition-all duration-700 ease-out`}>
-                            Reflective Leadership Essay
+                        <h2 className={`text-3xl md:text-4xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-slate-700'}`}>
+                            Leadership Reflection Essay
                         </h2>
-                        <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} transition-all duration-700 ease-out`}>
+                        <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                             A comprehensive reflection on my leadership journey, growth, and future aspirations.
                         </p>
                     </div>
                     <button
                         onClick={() => toggleReadAloud()}
-                        className={`mt-6 sm:mt-0 flex items-center px-5 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${isReading && !currentReadingSection
-                            ? 'bg-green-600 text-white shadow-lg'
+                        className={`mt-6 sm:mt-0 flex items-center px-5 py-3 rounded-lg font-medium transition-colors duration-300 ${isReading && !currentReadingSection
+                            ? 'bg-green-700 text-white'
                             : isDarkMode
-                                ? 'bg-gray-800 text-green-400 hover:bg-green-600 hover:text-white shadow-md'
-                                : 'bg-white text-green-600 hover:bg-green-600 hover:text-white shadow-md'
+                                ? 'bg-gray-800 text-green-400 hover:bg-green-700 hover:text-white'
+                                : 'bg-white text-green-700 hover:bg-green-700 hover:text-white border border-green-200'
                             }`}
                     >
                         {isReading && !currentReadingSection ? (
@@ -135,85 +134,74 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                     </button>
                 </div>
 
-                <div className={`rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-800 to-gray-700' : 'bg-white'} p-8 md:p-12 transition-all duration-500`}>
+                <div className={`rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'} p-6 md:p-8 border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
                     <article className="max-w-none">
                         {/* Introduction */}
                         <div
                             ref={introRef}
                             data-section="intro"
-                            className={`mb-16 text-center transition-all duration-700 ease-out ${visibleSections.has('intro') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                            className={`mb-12 text-center transition-opacity duration-700 ${visibleSections.has('intro') ? 'opacity-100' : 'opacity-0'}`}
                         >
-                            <div className={`inline-flex items-center justify-center w-20 h-20 ${isDarkMode ? 'bg-gradient-to-br from-green-700 to-green-600' : 'bg-gradient-to-br from-green-200 to-green-100'} rounded-2xl mb-6 transition-all duration-500`}>
-                                <BookOpen className={`w-9 h-9 ${isDarkMode ? 'text-white' : 'text-green-600'} transition-colors duration-500`} />
+                            <div className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 ${isDarkMode ? 'bg-green-800' : 'bg-green-100'} rounded-full mb-6`}>
+                                <BookOpen className={`w-8 h-8 md:w-9 md:h-9 ${isDarkMode ? 'text-white' : 'text-green-700'}`} />
                             </div>
-                            <p className={`text-xl italic max-w-2xl mx-auto ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} transition-colors duration-500`}>
+                            <p className={`text-lg md:text-xl italic max-w-2xl mx-auto ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                                 "Leadership is not about being in charge. It is about taking care of those in your charge." - Simon Sinek
                             </p>
                         </div>
 
-                        {/* Learning Experiences Section */}
+                        {/* Introduction Section */}
                         <section
-                            ref={learningRef}
-                            data-section="learning"
-                            className={`mb-16 transition-all duration-700 ease-out ${visibleSections.has('learning') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                            className={`mb-12 transition-opacity duration-700 ${visibleSections.has('intro') ? 'opacity-100' : 'opacity-0'}`}
                         >
-                            <div className="flex flex-col md:flex-row items-start justify-between mb-8">
-                                <h3 className={`text-2xl md:text-3xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'} flex items-center transition-colors duration-500`}>
-                                    <div className={`p-2 mr-4 rounded-xl ${isDarkMode ? 'bg-green-900/30' : 'bg-green-100'} transition-colors duration-500`}>
-                                        <Lightbulb className="w-7 h-7" />
+                            <div className="flex flex-col md:flex-row items-start justify-between mb-6">
+                                <h3 className={`text-xl md:text-2xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-green-400' : 'text-green-700'} flex items-center`}>
+                                    <div className={`p-2 mr-4 rounded-lg ${isDarkMode ? 'bg-green-900' : 'bg-green-100'}`}>
+                                        <Lightbulb className="w-6 h-6 md:w-7 md:h-7" />
                                     </div>
-                                    Learning Experiences That Transformed Me
+                                    Introduction
                                 </h3>
                                 <button
-                                    onClick={() => toggleReadAloud('learning')}
-                                    className={`p-3 rounded-xl ${isDarkMode ? 'hover:bg-gray-600' : 'hover:bg-gray-100'} transition-all duration-300 transform hover:scale-110`}
-                                    aria-label={isReading && currentReadingSection === 'learning' ? 'Stop reading section' : 'Read this section aloud'}
+                                    onClick={() => toggleReadAloud('introduction')}
+                                    className={`p-3 rounded-lg ${isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'} transition-colors duration-300`}
+                                    aria-label={isReading && currentReadingSection === 'introduction' ? 'Stop reading section' : 'Read this section aloud'}
                                 >
-                                    {isReading && currentReadingSection === 'learning' ? (
+                                    {isReading && currentReadingSection === 'introduction' ? (
                                         <VolumeX className="w-5 h-5" />
                                     ) : (
                                         <Volume2 className="w-5 h-5" />
                                     )}
                                 </button>
                             </div>
-                            <div className="space-y-6">
-                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                    <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
-                                        My journey began with a profound realization during my first community project in 2019. I discovered that traditional top-down approaches to leadership often fail to create sustainable change. This experience taught me the power of collaborative leadership and the importance of listening before leading.
-                                    </p>
-                                </div>
-                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                    <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
-                                        The failure of my initial project became a catalyst for growth, forcing me to reevaluate my assumptions about leadership and embrace a more inclusive approach. Another transformative moment came when I had to navigate a crisis that threatened to shut down our social enterprise.
-                                    </p>
-                                </div>
-                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                    <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
-                                        This experience taught me resilience, adaptability, and the crucial skill of turning challenges into opportunities. It was during this period that I learned to lead with vulnerability, admitting when I didn't have all the answers and leveraging the collective wisdom of my team.
-                                    </p>
-                                </div>
+                            <div className={`p-6 md:p-8 rounded-lg ${isDarkMode ? 'bg-gray-750' : 'bg-gray-50'} border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+                                <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                    My leadership journey has been both personal and professional, shaped by my mission to improve the quality of education and create opportunities for young people. Leadership, for me, is not just about holding a position of authority, but about guiding, influencing, and serving others in a way that inspires growth and transformation.
+                                </p>
+                                <p className={`text-lg leading-relaxed mt-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                    As I look back at my learning experiences, I see how they have expanded my skills, reshaped my mindset, and given me the confidence to pursue my mission and future aspirations.
+                                </p>
                             </div>
                         </section>
 
-                        {/* Applications of Leadership Theories Section */}
+                        {/* Transformation Section */}
                         <section
-                            ref={theoriesRef}
-                            data-section="theories"
-                            className={`mb-16 transition-all duration-700 ease-out ${visibleSections.has('theories') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                            ref={transformationRef}
+                            data-section="transformation"
+                            className={`mb-12 transition-opacity duration-700 ${visibleSections.has('transformation') ? 'opacity-100' : 'opacity-0'}`}
                         >
-                            <div className="flex flex-col md:flex-row items-start justify-between mb-8">
-                                <h3 className={`text-2xl md:text-3xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'} flex items-center transition-colors duration-500`}>
-                                    <div className={`p-2 mr-4 rounded-xl ${isDarkMode ? 'bg-green-900/30' : 'bg-green-100'} transition-colors duration-500`}>
-                                        <BookOpen className="w-7 h-7" />
+                            <div className="flex flex-col md:flex-row items-start justify-between mb-6">
+                                <h3 className={`text-xl md:text-2xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-green-400' : 'text-green-700'} flex items-center`}>
+                                    <div className={`p-2 mr-4 rounded-lg ${isDarkMode ? 'bg-green-900' : 'bg-green-100'}`}>
+                                        <TrendingUp className="w-6 h-6 md:w-7 md:h-7" />
                                     </div>
-                                    Applications of Leadership Theories
+                                    Transformation of Skills, Knowledge and Mindsets
                                 </h3>
                                 <button
-                                    onClick={() => toggleReadAloud('theories')}
-                                    className={`p-3 rounded-xl ${isDarkMode ? 'hover:bg-gray-600' : 'hover:bg-gray-100'} transition-all duration-300 transform hover:scale-110`}
-                                    aria-label={isReading && currentReadingSection === 'theories' ? 'Stop reading section' : 'Read this section aloud'}
+                                    onClick={() => toggleReadAloud('transformation')}
+                                    className={`p-3 rounded-lg ${isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'} transition-colors duration-300`}
+                                    aria-label={isReading && currentReadingSection === 'transformation' ? 'Stop reading section' : 'Read this section aloud'}
                                 >
-                                    {isReading && currentReadingSection === 'theories' ? (
+                                    {isReading && currentReadingSection === 'transformation' ? (
                                         <VolumeX className="w-5 h-5" />
                                     ) : (
                                         <Volume2 className="w-5 h-5" />
@@ -221,131 +209,125 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                 </button>
                             </div>
                             <div className="grid md:grid-cols-2 gap-6 mb-6">
-                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                    <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'} transition-colors duration-500`}>Servant Leadership</h4>
-                                    <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
-                                        Servant leadership principles have been particularly influential, shaping my belief that leaders exist to serve their teams and communities rather than the other way around. This philosophy has guided my approach to mentoring young entrepreneurs and building inclusive organizational cultures.
+                                <div className={`p-6 md:p-8 rounded-lg ${isDarkMode ? 'bg-gray-750' : 'bg-gray-50'} border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+                                    <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'}`}>Skill Development</h4>
+                                    <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                        I have strengthened my abilities in data collection, teamwork, public speaking and leadership through projects that required me to listen carefully, plan effectively and coordinate with others.
                                     </p>
                                 </div>
-                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                    <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'} transition-colors duration-500`}>Transformational Leadership</h4>
-                                    <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
-                                        I have drawn heavily from transformational leadership theory, focusing on inspiring and motivating others to exceed their own self-interests for the greater good. This approach has been essential in building coalitions and partnerships that have amplified our collective impact.
+                                <div className={`p-6 md:p-8 rounded-lg ${isDarkMode ? 'bg-gray-750' : 'bg-gray-50'} border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+                                    <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'}`}>Leadership Theories</h4>
+                                    <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                        I deepened my understanding of leadership theories such as transformational and servant leadership, which provided me with the tools to reflect on my actions and refine my approach.
                                     </p>
                                 </div>
                             </div>
-                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'} transition-colors duration-500`}>Situational Leadership</h4>
-                                <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
-                                    Situational leadership principles have helped me adapt my leadership style to different contexts and team members' needs, ensuring that my approach is always tailored to the specific challenges and opportunities at hand.
+                            <div className={`p-6 md:p-8 rounded-lg ${isDarkMode ? 'bg-gray-750' : 'bg-gray-50'} border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+                                <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'}`}>Mindset Shift</h4>
+                                <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                    Most importantly, my mindset has shifted. I no longer view challenges as obstacles, but as opportunities to learn and grow. By embracing mistakes and seeking feedback, I have developed a growth mindset that pushes me to continuously improve both personally and professionally.
                                 </p>
                             </div>
                         </section>
 
-                        {/* Skills and Mindset Section */}
+                        {/* Experiences Section */}
                         <section
-                            ref={skillsRef}
-                            data-section="skills"
-                            className={`mb-16 transition-all duration-700 ease-out ${visibleSections.has('skills') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                            ref={experiencesRef}
+                            data-section="experiences"
+                            className={`mb-12 transition-opacity duration-700 ${visibleSections.has('experiences') ? 'opacity-100' : 'opacity-0'}`}
                         >
-                            <div className="flex flex-col md:flex-row items-start justify-between mb-8">
-                                <h3 className={`text-2xl md:text-3xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'} flex items-center transition-colors duration-500`}>
-                                    <div className={`p-2 mr-4 rounded-xl ${isDarkMode ? 'bg-green-900/30' : 'bg-green-100'} transition-colors duration-500`}>
-                                        <TrendingUp className="w-7 h-7" />
+                            <div className="flex flex-col md:flex-row items-start justify-between mb-6">
+                                <h3 className={`text-xl md:text-2xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-green-400' : 'text-green-700'} flex items-center`}>
+                                    <div className={`p-2 mr-4 rounded-lg ${isDarkMode ? 'bg-green-900' : 'bg-green-100'}`}>
+                                        <BookOpen className="w-6 h-6 md:w-7 md:h-7" />
                                     </div>
-                                    Skills, Knowledge, and Mindset Transformation
+                                    Specific Learning Experiences and Leadership Theory Application
                                 </h3>
                                 <button
-                                    onClick={() => toggleReadAloud('skills')}
-                                    className={`p-3 rounded-xl ${isDarkMode ? 'hover:bg-gray-600' : 'hover:bg-gray-100'} transition-all duration-300 transform hover:scale-110`}
-                                    // aria-label={isReading && currentReadingSection === 'skills' : 'Read this section aloud'}
+                                    onClick={() => toggleReadAloud('experiences')}
+                                    className={`p-3 rounded-lg ${isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'} transition-colors duration-300`}
+                                    aria-label={isReading && currentReadingSection === 'experiences' ? 'Stop reading section' : 'Read this section aloud'}
                                 >
-                                {isReading && currentReadingSection === 'skills' ? (
-                                    <VolumeX className="w-5 h-5" />
-                                ) : (
-                                    <Volume2 className="w-5 h-5" />
-                                )}
-                            </button>
-                        </div>
-                        <div className="grid md:grid-cols-2 gap-6 mb-6">
-                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'} transition-colors duration-500`}>Technical to Holistic</h4>
-                                <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
-                                    My leadership capabilities have evolved from technical expertise to a holistic understanding encompassing emotional intelligence, systems thinking, and cultural competency.
-                                </p>
+                                    {isReading && currentReadingSection === 'experiences' ? (
+                                        <VolumeX className="w-5 h-5" />
+                                    ) : (
+                                        <Volume2 className="w-5 h-5" />
+                                    )}
+                                </button>
                             </div>
-                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'} transition-colors duration-500`}>Communication Mastery</h4>
-                                <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
-                                    My communication skills have been refined through countless presentations, negotiations, and difficult conversations that required empathy and clarity.
-                                </p>
-                            </div>
-                        </div>
-                        <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                            <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'} transition-colors duration-500`}>Growth Mindset</h4>
-                            <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
-                                My mindset has shifted from viewing leadership as a position of authority to understanding it as a practice of service and continuous learning. I've learned to embrace uncertainty, welcome feedback, and view failures as learning opportunities.
-                            </p>
-                        </div>
-                    </section>
-
-                    {/* Mission and Future Section */}
-                    <section
-                        ref={missionRef}
-                        data-section="mission"
-                        className={`transition-all duration-700 ease-out ${visibleSections.has('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                    >
-                        <div className="flex flex-col md:flex-row items-start justify-between mb-8">
-                            <h3 className={`text-2xl md:text-3xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'} flex items-center transition-colors duration-500`}>
-                                <div className={`p-2 mr-4 rounded-xl ${isDarkMode ? 'bg-green-900/30' : 'bg-green-100'} transition-colors duration-500`}>
-                                    <Target className="w-7 h-7" />
+                            <div className="space-y-6">
+                                <div className={`p-6 md:p-8 rounded-lg ${isDarkMode ? 'bg-gray-750' : 'bg-gray-50'} border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+                                    <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'}`}>Peer Study Group Leadership</h4>
+                                    <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                        One of the most meaningful learning experiences I had was leading a peer study group. At first, the group lacked direction and some members felt discouraged. I applied transformational leadership by setting a clear vision, encouraging participation, and creating an atmosphere of trust. I motivated the group to stay focused, and as a result, our collaboration improved and everyone gained confidence in their learning.
+                                    </p>
                                 </div>
-                                Mission Journey and Post-Graduation Plans
-                            </h3>
-                            <button
-                                onClick={() => toggleReadAloud('mission')}
-                                className={`p-3 rounded-xl ${isDarkMode ? 'hover:bg-gray-600' : 'hover:bg-gray-100'} transition-all duration-300 transform hover:scale-110`}
-                                aria-label={isReading && currentReadingSection === 'mission' ? 'Stop reading section' : 'Read this section aloud'}
-                            >
-                                {isReading && currentReadingSection === 'mission' ? (
-                                    <VolumeX className="w-5 h-5" />
-                                ) : (
-                                    <Volume2 className="w-5 h-5" />
-                                )}
-                            </button>
-                        </div>
-                        <div className="space-y-6">
-                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
-                                    My mission has always been to create sustainable positive change through innovative leadership and strategic partnerships. This mission has been the north star guiding all my professional and personal decisions.
-                                </p>
+                                <div className={`p-6 md:p-8 rounded-lg ${isDarkMode ? 'bg-gray-750' : 'bg-gray-50'} border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+                                    <h4 className={`font-semibold text-lg mb-4 ${isDarkMode ? 'text-green-300' : 'text-green-700'}`}>Community Education Coordination</h4>
+                                    <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                        Another valuable experience came from coordinating a community education activity in the camp. The project required mobilizing learners, organizing resources, and making sure activities ran smoothly. Here, I applied principles of servant leadership, putting the needs of the learners first and ensuring they felt supported. By listening to their challenges and incorporating their feedback, I helped create an inclusive and engaging environment.
+                                    </p>
+                                </div>
                             </div>
-                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
-                                    Looking ahead, I plan to expand this mission by establishing a leadership development institute focused on emerging market entrepreneurs and social innovators.
-                                </p>
-                            </div>
-                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-gray-750 to-gray-700' : 'bg-gradient-to-br from-green-50 to-gray-50'} transition-all duration-500 hover:shadow-lg`}>
-                                <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-colors duration-500`}>
-                                    Post-graduation, I intend to leverage the knowledge and network gained through my studies to scale our impact across multiple regions. My goal is to create a sustainable ecosystem that supports the next generation of leaders while continuing to address pressing social and economic challenges. This journey has taught me that true leadership is not about reaching a destination, but about continuously growing and empowering others to reach their full potential.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
+                        </section>
 
-                    {/* Conclusion */}
-                    <div
-                        ref={conclusionRef}
-                        data-section="conclusion"
-                        className={`mt-16 pt-12 text-center transition-all duration-700 ease-out ${visibleSections.has('conclusion') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                    >
-                        <p className={`text-xl italic max-w-2xl mx-auto ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} transition-colors duration-500`}>
-                            "The greatest leader is not necessarily the one who does the greatest things. He is the one that gets people to do the greatest things." - Ronald Reagan
-                        </p>
-                    </div>
-                </article>
+                        {/* Mission Section */}
+                        <section
+                            ref={missionRef}
+                            data-section="mission"
+                            className={`mb-12 transition-opacity duration-700 ${visibleSections.has('mission') ? 'opacity-100' : 'opacity-0'}`}
+                        >
+                            <div className="flex flex-col md:flex-row items-start justify-between mb-6">
+                                <h3 className={`text-xl md:text-2xl font-semibold mb-4 md:mb-0 ${isDarkMode ? 'text-green-400' : 'text-green-700'} flex items-center`}>
+                                    <div className={`p-2 mr-4 rounded-lg ${isDarkMode ? 'bg-green-900' : 'bg-green-100'}`}>
+                                        <Target className="w-6 h-6 md:w-7 md:h-7" />
+                                    </div>
+                                    Connection to Mission Journey, Career Aspirations and Future Plans
+                                </h3>
+                                <button
+                                    onClick={() => toggleReadAloud('mission')}
+                                    className={`p-3 rounded-lg ${isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'} transition-colors duration-300`}
+                                    aria-label={isReading && currentReadingSection === 'mission' ? 'Stop reading section' : 'Read this section aloud'}
+                                >
+                                    {isReading && currentReadingSection === 'mission' ? (
+                                        <VolumeX className="w-5 h-5" />
+                                    ) : (
+                                        <Volume2 className="w-5 h-5" />
+                                    )}
+                                </button>
+                            </div>
+                            <div className="space-y-6">
+                                <div className={`p-6 md:p-8 rounded-lg ${isDarkMode ? 'bg-gray-750' : 'bg-gray-50'} border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+                                    <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                        My mission is to improve education in Mahama Refugee Camp and beyond by ensuring learners have access to quality teaching, materials, and safe learning spaces. Everything I have learned in my leadership journey directly connects to this mission. The artefacts I worked on, including my portfolio reflections, mission statement and project experiences, serve as evidence of how I am preparing to create real impact.
+                                    </p>
+                                </div>
+                                <div className={`p-6 md:p-8 rounded-lg ${isDarkMode ? 'bg-gray-750' : 'bg-gray-50'} border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+                                    <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                        Post-graduation, I plan to use my leadership skills in the education and community development sector. Whether I work in nonprofit organizations, schools or community initiatives, my goal is to be a change-maker who uses leadership to empower others. The insights I gained about teamwork, adaptability and servant leadership will guide me in building sustainable solutions that transform learners' futures.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Conclusion */}
+                        <div
+                            ref={conclusionRef}
+                            data-section="conclusion"
+                            className={`mt-12 pt-8 text-center transition-opacity duration-700 ${visibleSections.has('conclusion') ? 'opacity-100' : 'opacity-0'}`}
+                        >
+                            <div className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 ${isDarkMode ? 'bg-green-800' : 'bg-green-100'} rounded-full mb-6`}>
+                                <Target className={`w-8 h-8 md:w-9 md:h-9 ${isDarkMode ? 'text-white' : 'text-green-700'}`} />
+                            </div>
+                            <Quote/>
+                            <p className={`text-lg md:text-xl italic max-w-11/12 mx-auto ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                                My leadership journey has been one of growth, reflection, and transformation. The experiences I gained, the theories I applied and the artefacts I created have shaped me into a leader who values service, adaptability and empowerment. I now carry not only improved skills and knowledge but also a mindset that sees leadership as a lifelong journey. As I move forward, I am confident that these lessons will continue to guide me in achieving my mission and contributing positively to the lives of others.
+                            </p>
+                            <Quote className="ml-auto"/>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
-        </div >
     );
 };

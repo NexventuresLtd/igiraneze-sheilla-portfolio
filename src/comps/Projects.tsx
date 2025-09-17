@@ -17,82 +17,82 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
 
     const portfolioArtefacts = [
         {
-            id: 5,
-            title: "Work at Plan International Rwanda",
-            type: "Professional Experience",
-            description: "Strategic planning and community development initiatives focused on sustainable growth in Rwanda.",
-            image: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=250&fit=crop",
-            tags: ["Strategic Planning", "Community Development", "Sustainability"]
+            id: 1,
+            title: "Education Initiatives at Mahama Refugee Camp",
+            type: "Education Development",
+            description: "Improved learning opportunities for children and youth through teacher training and resource provision.",
+            image: "/logos/meeting1.jpeg",
+            tags: ["Education", "Teacher Training", "Resource Management"]
         },
         {
-            id: 6,
-            title: "Lead Abezabarkang Dancing Club",
-            type: "Leadership Experience",
-            description: "Directed cultural preservation efforts through traditional dance, organizing performances and workshops.",
-            image: "https://images.unsplash.com/photo-1547153760-18fc86324498?w=400&h=250&fit=crop",
-            tags: ["Cultural Leadership", "Event Organization", "Team Management"]
+            id: 2,
+            title: "Peer Facilitation with Save the Children",
+            type: "Youth Development",
+            description: "Facilitated peer learning sessions focusing on life skills, education awareness, and leadership training.",
+            image: "/logos/meeting2.jpeg",
+            tags: ["Peer Learning", "Life Skills", "Leadership Training"]
         },
         {
-            id: 7,
-            title: "Sales Manager at NexVentures",
-            type: "Professional Experience",
-            description: "Led sales team to achieve record revenue growth through strategic client acquisition and retention.",
-            image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=250&fit=crop",
-            tags: ["Sales Leadership", "Revenue Growth", "Team Management"]
+            id: 3,
+            title: "Rwanda Book Mobile Literacy Program",
+            type: "Literacy Initiative",
+            description: "Promoted reading culture through mobile library programs and storytelling sessions.",
+            image: "/logos/meeting3.jpeg",
+            tags: ["Literacy", "Community Engagement", "Reading Culture"]
         },
         {
-            id: 8,
-            title: "Business Leadership at NexStudio Consulting",
-            type: "Business Leadership",
-            description: "Guided startups and SMEs to scale operations and optimize business strategies for long-term growth.",
-            image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=250&fit=crop",
-            tags: ["Business Strategy", "Leadership", "Operational Excellence"]
+            id: 4,
+            title: "Child Protection and Rights Advocacy",
+            type: "Community Development",
+            description: "Supported child protection campaigns and early childhood development programs.",
+            image: "/logos/meeting1.jpeg",
+            tags: ["Child Protection", "Advocacy", "Community Development"]
         }
     ];
 
     const experienceDetails: Record<string, PopupData> = {
-        "Work at Plan International Rwanda": {
-            title: "Plann Rwanda - Strategic Development Role",
-            description: "Focused on sustainable community development and strategic planning initiatives",
+        "Education Initiatives at Mahama Refugee Camp": {
+            title: "Education Development - Mahama Refugee Camp",
+            description: "Comprehensive program to improve education quality through teacher training, resource provision, and safe learning environments",
             details: [
-                "Developed and implemented strategic plans for community development projects",
-                "Collaborated with local leaders to identify growth opportunities",
-                "Managed stakeholder relationships and partnership development",
-                "Coordinated sustainable development initiatives across multiple regions",
-                "Achieved 30% increase in project efficiency through improved planning processes"
+                "Trained 45+ teachers in modern pedagogical methods and child-centered learning",
+                "Distributed educational materials to 500+ students across 3 camp schools",
+                "Established 5 safe classroom spaces for vulnerable children",
+                "Developed peer mentoring program that improved student retention by 35%",
+                "Organized community awareness sessions on importance of education"
             ]
         },
-        "Lead Abezabarkang Dancing Club": {
-            title: "Abezabarkang Dancing Club - Cultural Leadership",
-            description: "Promoting cultural heritage through traditional dance and community engagement",
+        "Peer Facilitation with Save the Children": {
+            title: "Save the Children Rwanda - Peer Facilitator",
+            description: "Facilitated learning and development sessions for youth in Mahama Refugee Camp",
             details: [
-                "Directed a team of 25+ dancers in performances and cultural events",
-                "Organized workshops to teach traditional dances to youth",
-                "Coordinated participation in national cultural festivals",
-                "Increased club membership by 40% through community outreach",
-                "Developed partnerships with cultural organizations for collaborative events"
+                "Conducted 60+ peer learning sessions on life skills and education awareness",
+                "Mentored 120+ young people in leadership and personal development",
+                "Developed curriculum for youth empowerment workshops",
+                "Trained 20 youth leaders to continue facilitation work",
+                "Built strong communication and teamwork skills while promoting children's rights"
             ]
         },
-        "Sales Manager at NexVentures": {
-            title: "NexVentures - Sales Management",
-            description: "Drove revenue growth and market expansion through strategic sales leadership",
+        "Rwanda Book Mobile Literacy Program": {
+            title: "Rwanda Book Mobile - Volunteer",
+            description: "Promoted literacy and love for reading through mobile library initiatives",
             details: [
-                "Led a team of 12 sales professionals to exceed quarterly targets",
-                "Developed and implemented new sales strategies resulting in 35% revenue growth",
-                "Built and maintained key client relationships with Fortune 500 companies",
-                "Trained and mentored junior sales staff, improving team performance by 25%",
-                "Implemented CRM system that increased sales efficiency by 40%"
+                "Organized weekly reading activities for 200+ children",
+                "Conducted storytelling sessions that improved literacy engagement by 40%",
+                "Collaborated with teachers and parents to support reading at home",
+                "Managed mobile library logistics and book distribution",
+                "Strengthened community engagement through literacy events"
             ]
         },
-        "Business Leadership at NexStudio Consulting": {
-            title: "NexStudio Consulting - Business Leadership",
-            description: "Advising startups and SMEs on scaling operations and improving business strategies",
+        "Child Protection and Rights Advocacy": {
+            title: "Plan International Rwanda - Child Protection Assistant",
+            description: "Supported child protection and early childhood development programs",
             details: [
-                "Developed growth strategies for 10+ startups, resulting in an average 50% revenue increase",
-                "Optimized operational processes to improve efficiency and reduce costs",
-                "Mentored business owners on leadership and strategic decision-making",
-                "Facilitated workshops on business planning, marketing, and financial management",
-                "Built partnerships with investors and industry leaders to support business growth"
+                "Assisted in implementing child protection policies in 3 communities",
+                "Supported education projects ensuring safe learning environments",
+                "Participated in National Dialogue on Positive Parenting",
+                "Contributed to child protection campaigns in Bugesera and Nyaruguru",
+                "Gained experience in advocacy, child rights and program management"
             ]
         }
     };
@@ -161,7 +161,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
                     transition={{ duration: 0.6 }}
                     className={`text-4xl font-bold mb-4 text-center ${isDarkMode ? 'text-white' : 'text-gray-900'}`}
                 >
-                    Portfolio Artefacts
+                    Education & Community Development Portfolio
                 </motion.h2>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -169,7 +169,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
                     transition={{ duration: 0.6, delay: 0.1 }}
                     className={`text-center mb-12 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto`}
                 >
-                    A collection of professional documents and project deliverables showcasing my leadership experience and strategic thinking.
+                    A collection of projects and initiatives focused on improving education quality, promoting child protection, and empowering youth in refugee communities.
                 </motion.p>
 
                 <motion.div
@@ -183,7 +183,6 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
                             key={artefact.id}
                             variants={itemVariants}
                             whileHover="hover"
-                            // variants={hoverVariants}
                             className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-xl overflow-hidden transition-all duration-300`}
                         >
                             <div className="overflow-hidden">

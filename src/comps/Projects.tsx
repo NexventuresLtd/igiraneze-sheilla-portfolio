@@ -21,7 +21,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             title: "Education Initiatives at Mahama Refugee Camp",
             type: "Education Development",
             description: "Improved learning opportunities for children and youth through teacher training and resource provision.",
-            image: "/logos/meeting1.jpeg",
+            image: "https://live.staticflickr.com/8869/28277428556_52560fa7fa_b.jpg",
             tags: ["Education", "Teacher Training", "Resource Management"]
         },
         {
